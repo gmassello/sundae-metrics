@@ -522,11 +522,11 @@ Against the preview, in Chrome with `chrome://flags/#enable-webmcp-testing` on:
 
 ## 12. Delivery checklist
 
-- [ ] Public GitHub repo with an open source license visible **in the About section** — the `LICENSE` file alone isn't enough, it has to be detectable there.
-- [ ] Live URL, working in Chrome with WebMCP enabled or in ChatGPT's browser.
+- [x] Public GitHub repo with an open source license visible **in the About section** — the `LICENSE` file alone isn't enough, it has to be detectable there.
+- [x] Live URL — https://sundae-metrics.vercel.app — working in Chrome with WebMCP enabled.
 - [ ] Demo video, under 3 minutes, on YouTube, with audio.
 - [ ] Written description (§10, stage 9).
-- [ ] README that assumes nobody runs the code (§10, stage 7).
+- [x] README that assumes nobody runs the code (§10, stage 7).
 - [ ] Submitted before **Sep 3, 2026, 1:00 PM PT** (5:00 PM ART).
 
 ### Rules that can wreck an otherwise good submission
