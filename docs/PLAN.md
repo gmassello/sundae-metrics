@@ -410,10 +410,10 @@ sundae-metrics/
 
 ### Stage 1 — Scaffold
 
-- `npm create vite@latest . -- --template react-ts` over the existing directory (don't create a nested `sundae-metrics/`).
-- Two dependencies, both dev: `vitest`, `webmcp-types@0.1.5`. No Tailwind, no Recharts, no router, no state library.
-- `vite.config.ts`: add `test: { environment: 'node' }`.
-- Delete `src/App.css`, `src/assets/`, and the template content in `App.tsx` / `index.css`.
+- Scaffold **into a temp directory** and copy the files in — never `npm create vite@latest .` over the repo. `create-vite` v9's `--overwrite` *removes existing files*, which on `.` means `.git/`, `docs/` and `LICENSE`; without the flag it opens an interactive prompt. Skip the template's `README.md`.
+- Two dependencies, both dev: `vitest`, `webmcp-types@0.1.5`. No Tailwind, no Recharts, no router, no state library. The template's linter (Oxlint in v9) stays as-is.
+- `vite.config.ts`: import `defineConfig` from `vitest/config` and add `test: { environment: 'node' }`. `package.json`: add `"test": "vitest run"`.
+- Delete `src/App.css`, `src/assets/`, `public/icons.svg`, and the template content in `App.tsx` / `index.css`. Set the project name and `<title>` to Sundae Metrics.
 
 **Gate:** `npm run build` and `npm run dev` come up.
 
