@@ -1,0 +1,2018 @@
+[
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "dulce_de_leche",
+    "units": 2380,
+    "revenue": 7639
+  },
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "chocolate",
+    "units": 1705,
+    "revenue": 5471
+  },
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "pistachio",
+    "units": 1050,
+    "revenue": 3601
+  },
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "strawberry",
+    "units": 960,
+    "revenue": 3080
+  },
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "lemon",
+    "units": 649,
+    "revenue": 2085
+  },
+  {
+    "store": "north",
+    "month": "2025-09",
+    "flavor": "passion_fruit",
+    "units": 452,
+    "revenue": 1224
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "dulce_de_leche",
+    "units": 3071,
+    "revenue": 9856
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "chocolate",
+    "units": 2199,
+    "revenue": 7058
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "pistachio",
+    "units": 1354,
+    "revenue": 4645
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "strawberry",
+    "units": 1238,
+    "revenue": 3973
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "lemon",
+    "units": 838,
+    "revenue": 2689
+  },
+  {
+    "store": "north",
+    "month": "2025-10",
+    "flavor": "passion_fruit",
+    "units": 583,
+    "revenue": 1579
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "dulce_de_leche",
+    "units": 3854,
+    "revenue": 12368
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "chocolate",
+    "units": 2760,
+    "revenue": 8858
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "pistachio",
+    "units": 1699,
+    "revenue": 5830
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "strawberry",
+    "units": 1554,
+    "revenue": 4987
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "lemon",
+    "units": 1052,
+    "revenue": 3375
+  },
+  {
+    "store": "north",
+    "month": "2025-11",
+    "flavor": "passion_fruit",
+    "units": 732,
+    "revenue": 1982
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "dulce_de_leche",
+    "units": 4761,
+    "revenue": 15278
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "chocolate",
+    "units": 3410,
+    "revenue": 10942
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "pistachio",
+    "units": 2099,
+    "revenue": 7202
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "strawberry",
+    "units": 1919,
+    "revenue": 6160
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "lemon",
+    "units": 1299,
+    "revenue": 4169
+  },
+  {
+    "store": "north",
+    "month": "2025-12",
+    "flavor": "passion_fruit",
+    "units": 905,
+    "revenue": 2449
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "dulce_de_leche",
+    "units": 5914,
+    "revenue": 19206
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "chocolate",
+    "units": 4236,
+    "revenue": 13754
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "pistachio",
+    "units": 554,
+    "revenue": 1778
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "strawberry",
+    "units": 2384,
+    "revenue": 7743
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "lemon",
+    "units": 1614,
+    "revenue": 5241
+  },
+  {
+    "store": "north",
+    "month": "2026-01",
+    "flavor": "passion_fruit",
+    "units": 1124,
+    "revenue": 3078
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "dulce_de_leche",
+    "units": 4852,
+    "revenue": 15914
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "chocolate",
+    "units": 3475,
+    "revenue": 11398
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "pistachio",
+    "units": 2139,
+    "revenue": 7502
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "strawberry",
+    "units": 1956,
+    "revenue": 6416
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "lemon",
+    "units": 1324,
+    "revenue": 4343
+  },
+  {
+    "store": "north",
+    "month": "2026-02",
+    "flavor": "passion_fruit",
+    "units": 922,
+    "revenue": 2551
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "dulce_de_leche",
+    "units": 4105,
+    "revenue": 13186
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "chocolate",
+    "units": 2940,
+    "revenue": 9443
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "pistachio",
+    "units": 1810,
+    "revenue": 6215
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "strawberry",
+    "units": 1655,
+    "revenue": 5316
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "lemon",
+    "units": 1120,
+    "revenue": 3598
+  },
+  {
+    "store": "north",
+    "month": "2026-03",
+    "flavor": "passion_fruit",
+    "units": 780,
+    "revenue": 2113
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "dulce_de_leche",
+    "units": 2958,
+    "revenue": 9491
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "chocolate",
+    "units": 2118,
+    "revenue": 6797
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "pistachio",
+    "units": 1304,
+    "revenue": 4474
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "strawberry",
+    "units": 1192,
+    "revenue": 3827
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "lemon",
+    "units": 807,
+    "revenue": 2590
+  },
+  {
+    "store": "north",
+    "month": "2026-04",
+    "flavor": "passion_fruit",
+    "units": 562,
+    "revenue": 1521
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "dulce_de_leche",
+    "units": 2206,
+    "revenue": 7078
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "chocolate",
+    "units": 1579,
+    "revenue": 5068
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "pistachio",
+    "units": 972,
+    "revenue": 3336
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "strawberry",
+    "units": 889,
+    "revenue": 2853
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "lemon",
+    "units": 602,
+    "revenue": 1931
+  },
+  {
+    "store": "north",
+    "month": "2026-05",
+    "flavor": "passion_fruit",
+    "units": 419,
+    "revenue": 1134
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "dulce_de_leche",
+    "units": 1732,
+    "revenue": 5556
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "chocolate",
+    "units": 1240,
+    "revenue": 3979
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "pistachio",
+    "units": 763,
+    "revenue": 2619
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "strawberry",
+    "units": 698,
+    "revenue": 2240
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "lemon",
+    "units": 472,
+    "revenue": 1516
+  },
+  {
+    "store": "north",
+    "month": "2026-06",
+    "flavor": "passion_fruit",
+    "units": 329,
+    "revenue": 890
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "dulce_de_leche",
+    "units": 1845,
+    "revenue": 5920
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "chocolate",
+    "units": 1321,
+    "revenue": 4239
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "pistachio",
+    "units": 813,
+    "revenue": 2790
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "strawberry",
+    "units": 744,
+    "revenue": 2387
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "lemon",
+    "units": 503,
+    "revenue": 1615
+  },
+  {
+    "store": "north",
+    "month": "2026-07",
+    "flavor": "passion_fruit",
+    "units": 350,
+    "revenue": 949
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "dulce_de_leche",
+    "units": 2010,
+    "revenue": 6448
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "chocolate",
+    "units": 1439,
+    "revenue": 4618
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "pistachio",
+    "units": 886,
+    "revenue": 3040
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "strawberry",
+    "units": 810,
+    "revenue": 2600
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "lemon",
+    "units": 548,
+    "revenue": 1760
+  },
+  {
+    "store": "north",
+    "month": "2026-08",
+    "flavor": "passion_fruit",
+    "units": 382,
+    "revenue": 1034
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "dulce_de_leche",
+    "units": 1970,
+    "revenue": 6497
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "chocolate",
+    "units": 1468,
+    "revenue": 4842
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "pistachio",
+    "units": 839,
+    "revenue": 3022
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "strawberry",
+    "units": 672,
+    "revenue": 2215
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "lemon",
+    "units": 423,
+    "revenue": 1394
+  },
+  {
+    "store": "south",
+    "month": "2025-09",
+    "flavor": "passion_fruit",
+    "units": 249,
+    "revenue": 916
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "dulce_de_leche",
+    "units": 2492,
+    "revenue": 8221
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "chocolate",
+    "units": 1858,
+    "revenue": 6128
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "pistachio",
+    "units": 1062,
+    "revenue": 3824
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "strawberry",
+    "units": 850,
+    "revenue": 2803
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "lemon",
+    "units": 535,
+    "revenue": 1764
+  },
+  {
+    "store": "south",
+    "month": "2025-10",
+    "flavor": "passion_fruit",
+    "units": 316,
+    "revenue": 1159
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "dulce_de_leche",
+    "units": 2977,
+    "revenue": 9818
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "chocolate",
+    "units": 2219,
+    "revenue": 7317
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "pistachio",
+    "units": 1268,
+    "revenue": 4566
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "strawberry",
+    "units": 1015,
+    "revenue": 3348
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "lemon",
+    "units": 638,
+    "revenue": 2106
+  },
+  {
+    "store": "south",
+    "month": "2025-11",
+    "flavor": "passion_fruit",
+    "units": 377,
+    "revenue": 1384
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "dulce_de_leche",
+    "units": 3564,
+    "revenue": 11756
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "chocolate",
+    "units": 2657,
+    "revenue": 8762
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "pistachio",
+    "units": 1518,
+    "revenue": 5468
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "strawberry",
+    "units": 1216,
+    "revenue": 4009
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "lemon",
+    "units": 765,
+    "revenue": 2522
+  },
+  {
+    "store": "south",
+    "month": "2025-12",
+    "flavor": "passion_fruit",
+    "units": 451,
+    "revenue": 1657
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "dulce_de_leche",
+    "units": 4001,
+    "revenue": 13197
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "chocolate",
+    "units": 2983,
+    "revenue": 9838
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "pistachio",
+    "units": 1705,
+    "revenue": 6139
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "strawberry",
+    "units": 1365,
+    "revenue": 4501
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "lemon",
+    "units": 858,
+    "revenue": 2832
+  },
+  {
+    "store": "south",
+    "month": "2026-01",
+    "flavor": "passion_fruit",
+    "units": 507,
+    "revenue": 1861
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "dulce_de_leche",
+    "units": 3986,
+    "revenue": 13148
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "chocolate",
+    "units": 2971,
+    "revenue": 9800
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "pistachio",
+    "units": 1698,
+    "revenue": 6115
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "strawberry",
+    "units": 1360,
+    "revenue": 4483
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "lemon",
+    "units": 855,
+    "revenue": 2821
+  },
+  {
+    "store": "south",
+    "month": "2026-02",
+    "flavor": "passion_fruit",
+    "units": 505,
+    "revenue": 1854
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "dulce_de_leche",
+    "units": 3240,
+    "revenue": 10679
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "chocolate",
+    "units": 2415,
+    "revenue": 7960
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "pistachio",
+    "units": 1380,
+    "revenue": 4967
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "strawberry",
+    "units": 1105,
+    "revenue": 3642
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "lemon",
+    "units": 695,
+    "revenue": 2291
+  },
+  {
+    "store": "south",
+    "month": "2026-03",
+    "flavor": "passion_fruit",
+    "units": 410,
+    "revenue": 1506
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "dulce_de_leche",
+    "units": 2423,
+    "revenue": 7995
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "chocolate",
+    "units": 1807,
+    "revenue": 5959
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "pistachio",
+    "units": 1033,
+    "revenue": 3719
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "strawberry",
+    "units": 827,
+    "revenue": 2726
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "lemon",
+    "units": 520,
+    "revenue": 1715
+  },
+  {
+    "store": "south",
+    "month": "2026-04",
+    "flavor": "passion_fruit",
+    "units": 307,
+    "revenue": 1127
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "dulce_de_leche",
+    "units": 1860,
+    "revenue": 6133
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "chocolate",
+    "units": 1386,
+    "revenue": 4571
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "pistachio",
+    "units": 792,
+    "revenue": 2853
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "strawberry",
+    "units": 634,
+    "revenue": 2091
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "lemon",
+    "units": 399,
+    "revenue": 1316
+  },
+  {
+    "store": "south",
+    "month": "2026-05",
+    "flavor": "passion_fruit",
+    "units": 235,
+    "revenue": 865
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "dulce_de_leche",
+    "units": 1447,
+    "revenue": 4770
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "chocolate",
+    "units": 1078,
+    "revenue": 3555
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "pistachio",
+    "units": 616,
+    "revenue": 2219
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "strawberry",
+    "units": 493,
+    "revenue": 1626
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "lemon",
+    "units": 310,
+    "revenue": 1023
+  },
+  {
+    "store": "south",
+    "month": "2026-06",
+    "flavor": "passion_fruit",
+    "units": 183,
+    "revenue": 673
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "dulce_de_leche",
+    "units": 1439,
+    "revenue": 4746
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "chocolate",
+    "units": 1073,
+    "revenue": 3538
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "pistachio",
+    "units": 613,
+    "revenue": 2208
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "strawberry",
+    "units": 491,
+    "revenue": 1619
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "lemon",
+    "units": 309,
+    "revenue": 1018
+  },
+  {
+    "store": "south",
+    "month": "2026-07",
+    "flavor": "passion_fruit",
+    "units": 182,
+    "revenue": 669
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "dulce_de_leche",
+    "units": 1521,
+    "revenue": 5014
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "chocolate",
+    "units": 1133,
+    "revenue": 3737
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "pistachio",
+    "units": 648,
+    "revenue": 2332
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "strawberry",
+    "units": 518,
+    "revenue": 1710
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "lemon",
+    "units": 326,
+    "revenue": 1076
+  },
+  {
+    "store": "south",
+    "month": "2026-08",
+    "flavor": "passion_fruit",
+    "units": 192,
+    "revenue": 707
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "dulce_de_leche",
+    "units": 2398,
+    "revenue": 7982
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "chocolate",
+    "units": 1836,
+    "revenue": 6099
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "pistachio",
+    "units": 1161,
+    "revenue": 4217
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "strawberry",
+    "units": 974,
+    "revenue": 3213
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "lemon",
+    "units": 712,
+    "revenue": 2359
+  },
+  {
+    "store": "central",
+    "month": "2025-09",
+    "flavor": "passion_fruit",
+    "units": 412,
+    "revenue": 1230
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "dulce_de_leche",
+    "units": 3286,
+    "revenue": 10940
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "chocolate",
+    "units": 2516,
+    "revenue": 8360
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "pistachio",
+    "units": 1592,
+    "revenue": 5780
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "strawberry",
+    "units": 1335,
+    "revenue": 4404
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "lemon",
+    "units": 976,
+    "revenue": 3234
+  },
+  {
+    "store": "central",
+    "month": "2025-10",
+    "flavor": "passion_fruit",
+    "units": 565,
+    "revenue": 1686
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "dulce_de_leche",
+    "units": 4245,
+    "revenue": 14135
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "chocolate",
+    "units": 3251,
+    "revenue": 10801
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "pistachio",
+    "units": 2057,
+    "revenue": 7467
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "strawberry",
+    "units": 1725,
+    "revenue": 5689
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "lemon",
+    "units": 1260,
+    "revenue": 4178
+  },
+  {
+    "store": "central",
+    "month": "2025-11",
+    "flavor": "passion_fruit",
+    "units": 730,
+    "revenue": 2178
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "dulce_de_leche",
+    "units": 5344,
+    "revenue": 17793
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "chocolate",
+    "units": 4092,
+    "revenue": 13596
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "pistachio",
+    "units": 2589,
+    "revenue": 9400
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "strawberry",
+    "units": 2171,
+    "revenue": 7162
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "lemon",
+    "units": 1587,
+    "revenue": 5259
+  },
+  {
+    "store": "central",
+    "month": "2025-12",
+    "flavor": "passion_fruit",
+    "units": 919,
+    "revenue": 2742
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "dulce_de_leche",
+    "units": 5711,
+    "revenue": 19016
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "chocolate",
+    "units": 4373,
+    "revenue": 14531
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "pistachio",
+    "units": 2767,
+    "revenue": 10046
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "strawberry",
+    "units": 2321,
+    "revenue": 7654
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "lemon",
+    "units": 1696,
+    "revenue": 5621
+  },
+  {
+    "store": "central",
+    "month": "2026-01",
+    "flavor": "passion_fruit",
+    "units": 982,
+    "revenue": 2930
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "dulce_de_leche",
+    "units": 5099,
+    "revenue": 16974
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "chocolate",
+    "units": 3904,
+    "revenue": 12971
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "pistachio",
+    "units": 2470,
+    "revenue": 8968
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "strawberry",
+    "units": 2071,
+    "revenue": 6833
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "lemon",
+    "units": 1514,
+    "revenue": 5018
+  },
+  {
+    "store": "central",
+    "month": "2026-02",
+    "flavor": "passion_fruit",
+    "units": 876,
+    "revenue": 2616
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "dulce_de_leche",
+    "units": 4311,
+    "revenue": 14351
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "chocolate",
+    "units": 3300,
+    "revenue": 10966
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "pistachio",
+    "units": 2088,
+    "revenue": 7582
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "strawberry",
+    "units": 1751,
+    "revenue": 5776
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "lemon",
+    "units": 1280,
+    "revenue": 4242
+  },
+  {
+    "store": "central",
+    "month": "2026-03",
+    "flavor": "passion_fruit",
+    "units": 741,
+    "revenue": 2211
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "dulce_de_leche",
+    "units": 3010,
+    "revenue": 10020
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "chocolate",
+    "units": 2304,
+    "revenue": 7657
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "pistachio",
+    "units": 1458,
+    "revenue": 5294
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "strawberry",
+    "units": 1223,
+    "revenue": 4033
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "lemon",
+    "units": 894,
+    "revenue": 2962
+  },
+  {
+    "store": "central",
+    "month": "2026-04",
+    "flavor": "passion_fruit",
+    "units": 517,
+    "revenue": 1544
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "dulce_de_leche",
+    "units": 2152,
+    "revenue": 7164
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "chocolate",
+    "units": 1647,
+    "revenue": 5474
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "pistachio",
+    "units": 1042,
+    "revenue": 3784
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "strawberry",
+    "units": 874,
+    "revenue": 2883
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "lemon",
+    "units": 639,
+    "revenue": 2117
+  },
+  {
+    "store": "central",
+    "month": "2026-05",
+    "flavor": "passion_fruit",
+    "units": 370,
+    "revenue": 1104
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "dulce_de_leche",
+    "units": 1725,
+    "revenue": 5744
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "chocolate",
+    "units": 1321,
+    "revenue": 4390
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "pistachio",
+    "units": 836,
+    "revenue": 3035
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "strawberry",
+    "units": 701,
+    "revenue": 2312
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "lemon",
+    "units": 512,
+    "revenue": 1698
+  },
+  {
+    "store": "central",
+    "month": "2026-06",
+    "flavor": "passion_fruit",
+    "units": 297,
+    "revenue": 885
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "dulce_de_leche",
+    "units": 1955,
+    "revenue": 6506
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "chocolate",
+    "units": 1496,
+    "revenue": 4973
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "pistachio",
+    "units": 947,
+    "revenue": 3438
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "strawberry",
+    "units": 794,
+    "revenue": 2619
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "lemon",
+    "units": 580,
+    "revenue": 1924
+  },
+  {
+    "store": "central",
+    "month": "2026-07",
+    "flavor": "passion_fruit",
+    "units": 336,
+    "revenue": 1003
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "dulce_de_leche",
+    "units": 2192,
+    "revenue": 7299
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "chocolate",
+    "units": 1679,
+    "revenue": 5578
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "pistachio",
+    "units": 1062,
+    "revenue": 3856
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "strawberry",
+    "units": 891,
+    "revenue": 2938
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "lemon",
+    "units": 651,
+    "revenue": 2158
+  },
+  {
+    "store": "central",
+    "month": "2026-08",
+    "flavor": "passion_fruit",
+    "units": 377,
+    "revenue": 1125
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "dulce_de_leche",
+    "units": 1404,
+    "revenue": 4357
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "chocolate",
+    "units": 1018,
+    "revenue": 3150
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "pistachio",
+    "units": 550,
+    "revenue": 1867
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "strawberry",
+    "units": 509,
+    "revenue": 1575
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "lemon",
+    "units": 366,
+    "revenue": 1130
+  },
+  {
+    "store": "west",
+    "month": "2025-09",
+    "flavor": "passion_fruit",
+    "units": 224,
+    "revenue": 622
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "dulce_de_leche",
+    "units": 1757,
+    "revenue": 5448
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "chocolate",
+    "units": 1273,
+    "revenue": 3939
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "pistachio",
+    "units": 687,
+    "revenue": 2335
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "strawberry",
+    "units": 636,
+    "revenue": 1969
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "lemon",
+    "units": 458,
+    "revenue": 1414
+  },
+  {
+    "store": "west",
+    "month": "2025-10",
+    "flavor": "passion_fruit",
+    "units": 280,
+    "revenue": 778
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "dulce_de_leche",
+    "units": 2413,
+    "revenue": 7485
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "chocolate",
+    "units": 1749,
+    "revenue": 5412
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "pistachio",
+    "units": 944,
+    "revenue": 3208
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "strawberry",
+    "units": 874,
+    "revenue": 2706
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "lemon",
+    "units": 629,
+    "revenue": 1942
+  },
+  {
+    "store": "west",
+    "month": "2025-11",
+    "flavor": "passion_fruit",
+    "units": 385,
+    "revenue": 1069
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "dulce_de_leche",
+    "units": 3037,
+    "revenue": 9424
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "chocolate",
+    "units": 2202,
+    "revenue": 6814
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "pistachio",
+    "units": 1189,
+    "revenue": 4039
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "strawberry",
+    "units": 1101,
+    "revenue": 3407
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "lemon",
+    "units": 793,
+    "revenue": 2445
+  },
+  {
+    "store": "west",
+    "month": "2025-12",
+    "flavor": "passion_fruit",
+    "units": 484,
+    "revenue": 1346
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "dulce_de_leche",
+    "units": 3403,
+    "revenue": 10557
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "chocolate",
+    "units": 2467,
+    "revenue": 7634
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "pistachio",
+    "units": 1332,
+    "revenue": 4525
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "strawberry",
+    "units": 1233,
+    "revenue": 3817
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "lemon",
+    "units": 888,
+    "revenue": 2740
+  },
+  {
+    "store": "west",
+    "month": "2026-01",
+    "flavor": "passion_fruit",
+    "units": 543,
+    "revenue": 1508
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "dulce_de_leche",
+    "units": 3076,
+    "revenue": 9538
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "chocolate",
+    "units": 2228,
+    "revenue": 6897
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "pistachio",
+    "units": 1203,
+    "revenue": 4088
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "strawberry",
+    "units": 1114,
+    "revenue": 3448
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "lemon",
+    "units": 802,
+    "revenue": 2475
+  },
+  {
+    "store": "west",
+    "month": "2026-02",
+    "flavor": "passion_fruit",
+    "units": 490,
+    "revenue": 1363
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "dulce_de_leche",
+    "units": 2474,
+    "revenue": 7672
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "chocolate",
+    "units": 1793,
+    "revenue": 5548
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "pistachio",
+    "units": 968,
+    "revenue": 3288
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "strawberry",
+    "units": 896,
+    "revenue": 2774
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "lemon",
+    "units": 645,
+    "revenue": 1991
+  },
+  {
+    "store": "west",
+    "month": "2026-03",
+    "flavor": "passion_fruit",
+    "units": 394,
+    "revenue": 1096
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "dulce_de_leche",
+    "units": 1709,
+    "revenue": 5302
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "chocolate",
+    "units": 1239,
+    "revenue": 3834
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "pistachio",
+    "units": 669,
+    "revenue": 2272
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "strawberry",
+    "units": 619,
+    "revenue": 1917
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "lemon",
+    "units": 446,
+    "revenue": 1376
+  },
+  {
+    "store": "west",
+    "month": "2026-04",
+    "flavor": "passion_fruit",
+    "units": 272,
+    "revenue": 757
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "dulce_de_leche",
+    "units": 1248,
+    "revenue": 3872
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "chocolate",
+    "units": 904,
+    "revenue": 2799
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "pistachio",
+    "units": 488,
+    "revenue": 1659
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "strawberry",
+    "units": 452,
+    "revenue": 1399
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "lemon",
+    "units": 326,
+    "revenue": 1004
+  },
+  {
+    "store": "west",
+    "month": "2026-05",
+    "flavor": "passion_fruit",
+    "units": 199,
+    "revenue": 553
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "dulce_de_leche",
+    "units": 1010,
+    "revenue": 3136
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "chocolate",
+    "units": 733,
+    "revenue": 2267
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "pistachio",
+    "units": 396,
+    "revenue": 1344
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "strawberry",
+    "units": 366,
+    "revenue": 1134
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "lemon",
+    "units": 264,
+    "revenue": 814
+  },
+  {
+    "store": "west",
+    "month": "2026-06",
+    "flavor": "passion_fruit",
+    "units": 161,
+    "revenue": 448
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "dulce_de_leche",
+    "units": 1133,
+    "revenue": 3513
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "chocolate",
+    "units": 821,
+    "revenue": 2540
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "pistachio",
+    "units": 443,
+    "revenue": 1506
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "strawberry",
+    "units": 410,
+    "revenue": 1270
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "lemon",
+    "units": 295,
+    "revenue": 912
+  },
+  {
+    "store": "west",
+    "month": "2026-07",
+    "flavor": "passion_fruit",
+    "units": 181,
+    "revenue": 502
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "dulce_de_leche",
+    "units": 1270,
+    "revenue": 3940
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "chocolate",
+    "units": 921,
+    "revenue": 2849
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "pistachio",
+    "units": 497,
+    "revenue": 1689
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "strawberry",
+    "units": 460,
+    "revenue": 1424
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "lemon",
+    "units": 331,
+    "revenue": 1022
+  },
+  {
+    "store": "west",
+    "month": "2026-08",
+    "flavor": "passion_fruit",
+    "units": 203,
+    "revenue": 563
+  }
+]

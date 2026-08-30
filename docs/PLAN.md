@@ -94,11 +94,11 @@ type SalesRecord = {
   month: string;         // "2026-03"
   flavor: Flavor;
   units: number;
-  revenue: number;       // ARS
+  revenue: number;       // USD
 };
 ```
 
-12 months × 4 stores × 6 flavors = **288 records**. Window `2025-09` → `2026-08`, southern-hemisphere seasonality (summer peak Dec–Feb), amounts in ARS. Dulce de leche always on top; one flavor drops sharply in one month so "why did it drop?" has an interesting answer.
+12 months × 4 stores × 6 flavors = **288 records**. Window `2025-09` → `2026-08`, southern-hemisphere seasonality (summer peak Dec–Feb), amounts in USD. Dulce de leche always on top; one flavor drops sharply in one month so "why did it drop?" has an interesting answer.
 
 `src/data/stores.ts` holds the types, the 4 stores with `name`/`city`, and the 6 flavors with their UI labels (`dulce_de_leche` → "Dulce de leche").
 
@@ -108,26 +108,27 @@ type SalesRecord = {
 
 These are the numbers the mockups print on screen. The seed must produce exactly these, and `queries.test.ts` is the only place in the repo where they are written by hand — if the seed drifts, the test fails there.
 
-**North, monthly revenue:** Sep 2,310,000 · Oct 2,980,000 · Nov 3,740,000 · Dec 4,620,000 · Jan 5,080,000 · **Feb 4,812,400** · **Mar 3,987,100** · Apr 2,870,000 · May 2,140,000 · Jun 1,680,000 · Jul 1,790,000 · Aug 1,950,000.
+**North, monthly revenue (USD):** Sep 23,100 · Oct 29,800 · Nov 37,400 · Dec 46,200 · Jan 50,800 · **Feb 48,124** · **Mar 39,871** · Apr 28,700 · May 21,400 · Jun 16,800 · Jul 17,900 · Aug 19,500.
 
-**North Feb 2026:** revenue 4,812,400 · units 14,668.
+**North Feb 2026:** revenue 48,124 · units 14,668.
 
-**North Mar 2026:** revenue 3,987,100 · units 12,410. Flavor split (units / revenue): dulce_de_leche 4,105 / 1,318,600 · chocolate 2,940 / 944,300 · pistachio 1,810 / 621,500 · strawberry 1,655 / 531,600 · lemon 1,120 / 359,800 · passion_fruit 780 / 211,300. **Sums match exactly.**
+**North Mar 2026:** revenue 39,871 · units 12,410. Flavor split (units / revenue): dulce_de_leche 4,105 / 13,186 · chocolate 2,940 / 9,443 · pistachio 1,810 / 6,215 · strawberry 1,655 / 5,316 · lemon 1,120 / 3,598 · passion_fruit 780 / 2,113. **Sums match exactly.** Implied price: US$ 3.21 per unit.
 
 **compare_periods(north, 2026-02, 2026-03):** `revenueChangePct: -17.1`, `unitsChangePct: -15.4`.
 
-**get_summary(2026-03-01, 2026-03-31):** total 13,841,300 — north 3,987,100 · central 4,512,800 · south 3,104,500 · west 2,236,900.
+**get_summary(2026-03-01, 2026-03-31):** total 138,413 — north 39,871 · central 45,128 · south 31,045 · west 22,369.
 
 **South Mar 2026, top 3 by units:** dulce_de_leche 3,240 · chocolate 2,415 · pistachio 1,380. **Bottom 3:** passion_fruit 410 · lemon 695 · strawberry 1,105.
 
 **How the seed reaches them** (§10, stage 2):
 
 - **Anchored:** North's 12 monthly revenue values, verbatim.
-- **Derived:** the other 3 stores come from the same seasonal shape scaled by a fixed per-store factor, with March 2026 overwritten to the exact figures above so `get_summary` closes on its total.
+- **Derived:** the other 3 stores come from North's seasonal shape scaled by a per-store factor **derived from the March figures above** (`march[store] / march.north`) times a fixed 12-value tilt vector whose March entry is exactly `1.0`. March therefore lands on its exact figure by construction — no overwrite, and no visible step in the curve at that month.
 - **Flavor split:** fixed weight vector per store; the rounding remainder is charged to the top flavor so the sum closes exactly.
-- **Literally overwritten:** North Feb 2026, North Mar 2026 (all 6 flavors, units and revenue) and South Mar 2026 — the three months the mockups show data point by data point.
+- **Literally overwritten:** North Feb 2026 (totals), North Mar 2026 (all 6 flavors, units and revenue) and South Mar 2026 (the 6 unit figures; revenue splits from the total) — the three months the mockups show data point by data point.
+- **The sharp drop (§3):** North / `pistachio` / **2026-01**, weight cut to 0.035 and the delta spread across the other 5 flavors. January is the season's peak and its monthly total is anchored, so **the chart bar does not move** — pistachio going from 2,099 units in December to 554 in January is invisible on screen and only a tool call surfaces it. That is the project's pitch, sitting in the dataset.
 
-Deterministic PRNG with a fixed seed, no free `Math.random`. `src/data/sales.json` is generated once and **committed**.
+**No randomness at all** — every figure comes from fixed vectors and arithmetic, so the byte-identical gate holds by construction and no jitter can break an anchored sum. `src/data/sales.json` is generated once and **committed**.
 
 ---
 
@@ -452,7 +453,7 @@ The last two exist so the chart and the card don't recompute what the query laye
 
 `src/index.css` with the §7 tokens, fonts and `pulseRing`. Then the 8 components of §9 and `App.tsx` wiring the header, the `1fr 328px` grid, the tab bar and the amber toast inline.
 
-**Gate:** the empty shell matches `1a` at 1280px. Changing store or range updates all 4 KPIs, the chart and the breakdown. North's March bar reads 3,987,100 — the same figure as the KPI card.
+**Gate:** the empty shell matches `1a` at 1280px. Changing store or range updates all 4 KPIs, the chart and the breakdown. North's March bar reads 39,871 — the same figure as the KPI card.
 
 ### Stage 6 — The 6 WebMCP tools
 
@@ -497,7 +498,7 @@ npm test && npm run build && npm run preview
 Against the preview, in Chrome with `chrome://flags/#enable-webmcp-testing` on:
 
 1. The Tool Inspector lists all 6 tools with their schemas.
-2. `get_sales({store:"north", month:"2026-03"})` returns 3,987,100 — **the same number the March bar and the KPI card show**.
+2. `get_sales({store:"north", month:"2026-03"})` returns 39,871 — **the same number the March bar and the KPI card show**.
 3. `compare_periods({store:"north", monthA:"2026-02", monthB:"2026-03"})` returns `-17.1`.
 4. `set_dashboard_view({store:"south"})` changes the screen, shows the amber toast, and leaves a `WRITE`-marked entry in the log.
 5. `?webmcp=off`: the dashboard renders identically and the rail shows the `1e` state.
