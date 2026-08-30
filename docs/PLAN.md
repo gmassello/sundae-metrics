@@ -432,6 +432,16 @@ sundae-metrics/
 
 The last two exist so the chart and the card don't recompute what the query layer already computes.
 
+**Two behaviours this stage had left open:**
+
+- **Zero divisor → `null`, not `0`.** `comparePeriods` returns `{ revenueChangePct: number | null, unitsChangePct: number | null }`. A percentage change from zero is undefined; a `0` would read to the agent as "it didn't change". The UI renders `—`.
+- **Invalid input throws, at the tool-facing entry points only.** The four functions a tool calls — `getSales`, `comparePeriods`, `getTopFlavors`, `getSummary` — open with an `assertQuery`/`assertMonth`/`assertDate` line and raise an `Error` with a legible message (`Unknown store "norte"`, `Invalid month "03-2026", expected YYYY-MM`, `No data between ...`). Every `execute` in stage 6 catches it and hands the text back to the agent, so a typo is distinguishable from a real month with no sales instead of being reported as US$ 0. This is the trust boundary: the input comes from an agent.
+
+  The two feeds the UI calls directly — `flavorBreakdown` and `monthlyRevenue` — deliberately **do not** validate: they are driven by the `<input type="month">` of §8.1 and must degrade to an empty card, never throw inside a React render. `recordsFor` is a plain filter so the divide stays by consumer and not by which parameter a function happens to pass. Keep the split: a new query goes into one group or the other, on purpose.
+- `store` omitted means **all locations** — one convention across the whole API, `getSales` and `comparePeriods` included (the `All` pill of §8.1 needs the KPI row and its deltas to come from the query layer rather than from arithmetic in the component). The 4-value `enum` in the tools' `inputSchema` is unchanged: the tools always pass a store.
+- `getSales` derives its totals **from** `byFlavor` rather than summing the records a second time, so a total can never disagree with the breakdown printed beside it.
+- `tsconfig.app.json` needs `"resolveJsonModule": true` for `tsc -b` to accept the `sales.json` import.
+
 **Gate — `src/lib/queries.test.ts` (Vitest), asserting §4:**
 - `comparePeriods(north, 2026-02, 2026-03)` → **−17.1%**, plus a growth case and a zero-divisor case.
 - `getSummary(2026-03-01, 2026-03-31)` → March total and the 4 per-store figures.
