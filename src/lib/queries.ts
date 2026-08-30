@@ -22,11 +22,11 @@ const LAST_MONTH = MONTHS[MONTHS.length - 1]
 export type FlavorTotal = { flavor: Flavor; units: number; revenue: number }
 export type Totals = { units: number; revenue: number }
 
-function assertStore(store: string): void {
+export function assertStore(store: string): void {
   if (!STORES.some((s) => s.id === store)) throw new Error(`Unknown store "${store}"`)
 }
 
-function assertMonth(month: string): void {
+export function assertMonth(month: string): void {
   if (!MONTH_FORMAT.test(month)) throw new Error(`Invalid month "${month}", expected YYYY-MM`)
   if (!MONTHS.includes(month)) {
     throw new Error(`No data for month "${month}", available ${FIRST_MONTH} to ${LAST_MONTH}`)
@@ -40,6 +40,11 @@ function assertQuery(store?: string, month?: string): void {
 
 function assertDate(date: string): void {
   if (!DATE_FORMAT.test(date)) throw new Error(`Invalid date "${date}", expected YYYY-MM-DD`)
+}
+
+export function monthOf(date: string): string {
+  assertDate(date)
+  return date.slice(0, 7)
 }
 
 function recordsFor(store?: string, month?: string): SalesRecord[] {
@@ -112,12 +117,10 @@ export function getTopFlavors({
 }
 
 export function getSummary({ dateFrom, dateTo }: { dateFrom: string; dateTo: string }) {
-  assertDate(dateFrom)
-  assertDate(dateTo)
+  const from = monthOf(dateFrom)
+  const to = monthOf(dateTo)
   if (dateFrom > dateTo) throw new Error(`Range start "${dateFrom}" is after its end "${dateTo}"`)
 
-  const from = dateFrom.slice(0, 7)
-  const to = dateTo.slice(0, 7)
   if (to < FIRST_MONTH || from > LAST_MONTH) {
     throw new Error(
       `No data between "${dateFrom}" and "${dateTo}", available ${FIRST_MONTH} to ${LAST_MONTH}`,
