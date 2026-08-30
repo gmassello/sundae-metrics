@@ -29,6 +29,8 @@ export const STORES: Store[] = [
   { id: 'west', name: 'Glacé West', city: 'Caballito' },
 ]
 
+export const STORE_IDS: StoreId[] = STORES.map((s) => s.id)
+
 export const FLAVORS: { id: Flavor; label: string }[] = [
   { id: 'dulce_de_leche', label: 'Dulce de leche' },
   { id: 'chocolate', label: 'Chocolate' },

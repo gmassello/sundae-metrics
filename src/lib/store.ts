@@ -81,6 +81,10 @@ export function useDashboard(): DashboardState {
   return useSyncExternalStore(subscribe, getState)
 }
 
+export function storeParam(store: ViewStore): StoreId | undefined {
+  return store === 'all' ? undefined : store
+}
+
 export function setView(patch: Partial<View>): void {
   clearTimeout(highlightTimer)
   setState({ view: { ...state.view, ...patch }, previousView: null, highlight: false })
