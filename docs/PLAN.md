@@ -143,7 +143,7 @@ Registered with `document.modelContext.registerTool()`.
 | `compare_periods` | % change between two periods, computed in the query layer (don't make the agent do the math) | `{store, monthA, monthB}` | `{revenueChangePct, unitsChangePct}` | `true` |
 | `get_top_flavors` | Flavor ranking, from the top **or the bottom** | `{store?, month?, limit, order?: "top" \| "bottom"}` | `[{flavor, units, revenue}]` | `true` |
 | `get_summary` | Aggregate across all locations over a date range | `{dateFrom, dateTo}` | `{totalRevenue, byStore: [...]}` | `true` |
-| `set_dashboard_view` | Changes what the user sees (active store + date range) | `{store?, dateFrom?, dateTo?}` | `{ok: true, applied: {...}}` | **`false`** |
+| `set_dashboard_view` | Changes what the user sees (active store + date range) | `{store?, dateFrom?, dateTo?}`, `store` also takes `"all"` | `{ok: true, applied: {...}}` | **`false`** |
 
 ### Three rules that are easy to get wrong
 
@@ -219,7 +219,7 @@ document.modelContext.registerTool({
   inputSchema: {
     type: "object",
     properties: {
-      store: { type: "string", enum: ["north", "south", "central", "west"] },
+      store: { type: "string", enum: ["north", "south", "central", "west", "all"] },
       dateFrom: { type: "string", description: "YYYY-MM-DD" },
       dateTo: { type: "string", description: "YYYY-MM-DD" }
     }
@@ -453,11 +453,16 @@ The last two exist so the chart and the card don't recompute what the query laye
 
 `src/lib/store.ts` — ~30-line module-level store exposed via `useSyncExternalStore`. Mutable from outside React, which is exactly what `set_dashboard_view` needs in stage 6.
 
-- State: `{ store, dateFrom, dateTo, tab }`.
-- `calls`: agent call log, cap 20.
-- `toast`: holds the previous view, for the Undo in `1c` / `1d`.
-- `webmcpReady`: drives the `1e` state.
-- `applyDashboardView(input)` saves the previous view before mutating; `undoView()` restores it.
+- State: `{ view: { store, monthFrom, monthTo }, tab }`. The view is **nested, and monthly** — `undoView` restores it in one assignment instead of three, and the two `<input type="month">` of §8.1 plus `monthlyRevenue`/`flavorBreakdown` all speak months. `set_dashboard_view` receives `YYYY-MM-DD` per §5 and converts at the boundary, inside `applyDashboardView`; the field names carry the granularity so the two never get confused.
+- `calls`: agent call log, cap 20, newest first. Entry shape is §8.3's plus an `id`: two calls inside the same millisecond share a `ts`, and React needs a stable key.
+- `previousView` + `highlight`: the Undo of `1c` / `1d` and the ~4s amber decay of §8.2. The decay is a `setTimeout` **in the store**, restarted by a second write inside the window — a `useEffect` wouldn't exist at the moment the mutation arrives from a tool's `execute`.
+- `webmcpReady`: drives the `1e` state. `store.ts` stays DOM-free — reading `document.modelContext` and `?webmcp=off` belongs to stage 6 — which is what lets it be tested under the `environment: 'node'` already configured.
+- `applyDashboardView(input)` validates with the same `assertStore`/`assertMonth` the query layer uses (exported for this), applies **only the fields present**, saves the previous view and returns the applied one for the tool to echo in `{ok: true, applied}`. Invalid input throws and leaves the state untouched. `undoView()` restores and spends the snapshot.
+
+**Two behaviours this stage had left open:**
+
+- **Undo is single-level.** One `previousView`, exactly as this stage says: only the most recent write is reversible, and the `Undo` chip of an older write entry renders disabled in stage 5. That is what the video needs — one write, one visible Undo — and it keeps "undo" meaning a step back rather than a jump to an arbitrary old state.
+- **`'all'` joins the `enum` of `set_dashboard_view`** (5 values). The agent can drive the screen to any state the human reaches with the mouse, the All view included, so no corner of the UI is unreachable to it. `store` omitted still means "leave it alone": this is a partial-update tool, which is why the sentinel is needed at all.
 
 ### Stage 5 — Styles and components
 
