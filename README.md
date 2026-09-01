@@ -2,7 +2,7 @@
 
 A sales dashboard for **Glacé**, a fictional chain of 4 artisanal ice cream shops, that hands an agent six tools instead of a picture of a chart. Built for [The WebMCP Challenge](https://webmcp.devpost.com/).
 
-**Live:** [sundae-metrics.vercel.app](https://sundae-metrics.vercel.app) · needs Chrome 149+ with `chrome://flags/#enable-webmcp-testing` enabled to see the agent side ([details below](#trying-it)).
+**Live:** [sundae-metrics.vercel.app](https://sundae-metrics.vercel.app) · open it in the ChatGPT desktop app's built-in browser, which supports WebMCP with no setup — or in Chrome 149+ with `chrome://flags/#enable-webmcp-testing` enabled ([details below](#trying-it)).
 
 ![Sundae Metrics with an agent reading and writing the dashboard](docs/screenshot.png)
 
@@ -69,11 +69,20 @@ await set_dashboard_view({ store: "north", dateFrom: "2026-02-01", dateTo: "2026
 
 ## Trying it
 
+**In ChatGPT — nothing to enable in a browser.** Its [built-in browser supports WebMCP out of the box](https://learn.chatgpt.com/docs/webmcp).
+
+1. The **desktop app** (not the web app, not mobile), on **GPT-5.6 Sol or Terra** — Luna has WebMCP disabled. Not available in Enterprise or Edu workspaces.
+2. *Settings → Browser → Permissions → **Enable site tools***.
+3. Open the live URL there. **Site tools** in the address bar lists all six under *Available site tools*, and every call shows up under *Recently used*.
+4. Ask the February-to-March question and watch the rail fill up.
+
+**In Chrome — one flag.**
+
 1. Chrome 149+ (151 verified). Open `chrome://flags/#enable-webmcp-testing`, set it to **Enabled**, relaunch.
 2. Open the live URL. The header badge should read **WebMCP · 6 tools**; the [Model Context Tool Inspector](https://github.com/beaufortfrancois/model-context-tool-inspector) lists all six with their schemas.
 3. Ask your agent the February-to-March question and watch the rail fill up.
 
-Without the flag, `document.modelContext` is `undefined`. The page detects that, says so in the rail, and keeps working as a plain dashboard — the human side never depends on the agent side. Adding `?webmcp=off` to the URL forces that same state on purpose: it is the "before" shot of the demo.
+In a browser without WebMCP support, `document.modelContext` is `undefined`. The page detects that, says so in the rail, and keeps working as a plain dashboard — the human side never depends on the agent side. Adding `?webmcp=off` to the URL forces that same state on purpose: it is the "before" shot of the demo.
 
 ## Running it locally
 

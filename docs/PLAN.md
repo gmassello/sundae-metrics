@@ -488,13 +488,144 @@ The six from §5, with the three rules stated there.
 
 **Gate:** open the Vercel URL in Chrome with the flag on, from a clean window, and all 6 tools respond.
 
+**Reopened and closed (Aug 31) — the no-flag path was missing.** The rules name it *first*: "Open your deployed app in ChatGPT's in-app browser, which supports WebMCP out of the box. To test in Google Chrome, enable WebMCP using `chrome://flags/#enable-webmcp-testing`." Both the README and the `1e` state inside the app documented only the Chrome flag, which put a setup chore in front of the person scoring the entry. Two edits, both done:
+
+- `README.md` — line 5 now names both paths, and `## Trying it` is split into **In ChatGPT — nothing to enable in a browser** (desktop app, GPT-5.6 Sol or Terra, *Enable site tools*, *Site tools* in the address bar) followed by **In Chrome — one flag**. The closing paragraph no longer says "without the flag": it says "in a browser without WebMCP support", which is what `?webmcp=off` actually simulates.
+- `src/components/AgentActivityLog.tsx`, the `NoWebmcp` component — two labelled `<ol>` blocks, ChatGPT first and Chrome second, reusing the existing `.nomcp p` / `.nomcp ol` rules: no new CSS, no §7 tokens touched. `Copy flag URL` and `Recheck` unchanged — the flag URL stays the only one of the two paths with anything to copy.
+
+Redeployed with `npx vercel --prod` from local — the GitHub repo is **not** connected, so a push does not redeploy. This edit is what invalidates the already-filmed "before" take: that panel is on camera.
+
 ### Stage 8 — Before/after video (<3 min, YouTube, with audio)
 
-- **Before, real and unstaged:** a browser-driving agent, same question, against `?webmcp=off`. It has to estimate the bar height. Film the real failure.
-- **After:** same question, tools live, two calls, exact number, AgentActivityLog showing them.
-- **Close on `set_dashboard_view`:** the agent changes what you are looking at.
+Assembled from a written script with a synthetic voice track, not a live voiceover: a wording change
+rebuilds in seconds and the caption timings are exact by construction. Pipeline and its three
+scripts → the `personal-record-video` skill.
 
-**Gate:** under 3 minutes, has audio, uploaded to YouTube as public or unlisted.
+**Done so far:**
+
+- `video/narration.tsv` — 8 beats, 36 lines. `video/out/narration.wav` — **2:32.3**,
+  `HARD CAP 3:00 — OK`, drift 0.000, voice `Ava (Premium)`.
+- `video/chatgpt-run.md` — the app setup and the exact prompts. `video/shotlist.md` — both takes.
+- `.gitignore` — `video/out/`, `video/*.mov`.
+- Both takes shot in the ChatGPT app on Sep 1. The earlier "before", filmed in Chrome with a
+  browser-driving agent, was discarded: the Stage 7 reopen put a different `1e` panel on camera and
+  the whole contrast moved to the ChatGPT app.
+
+**Every number in the script was verified against the production bundle**, not the repo — the alias
+points at the last prod deploy, which may lag the working tree. `sundae-metrics.vercel.app` serves
+288 records, north 2026-01 = 50,800 with pistachio 554 units / US$ 1,778, december 2,099 / 7,202,
+and all 6 tool names present in the deployed JS.
+
+**The honest contrast is cost, not incapacity.** Without the tools the agent still gets there — the
+chart prints its values as text, so it reads them. What it cannot do is get there cheaply. That is
+what the two runs below measure, and it is a stronger claim than "the agent guesses", because it
+survives someone trying it.
+
+**Both takes move to the ChatGPT desktop app's built-in browser** — the environment the judges
+actually use. Hard requirements, all of them blocking:
+
+- Desktop app only. Not mobile, not the web app.
+- **GPT-5.6 Sol or Terra.** Luna has WebMCP disabled.
+- Not available in Enterprise or Edu workspaces; also gated on rollout.
+- **Enable site tools**, which is *not* under a pane called "Browser": it lives in the built-in
+  browser's settings, section *Permissions* (`settings.browserUse.webMcp`).
+- The composer's **Chat ↔ Work** toggle on **Work**. The built-in browser does not exist on the Chat
+  side; asked from there, the model answers that it cannot open a browser.
+
+**Two gates before filming anything:**
+
+1. **Passed (Aug 31).** All 6 tools listed, and `compare_periods(north, 2026-02, 2026-03)` came back
+   **−17.1% / −15.4%** — the §4 figures. Three things had to line up first, none of them the
+   "Settings → Browser" wording the ChatGPT docs use: the app is the Codex-flavoured desktop build
+   (`com.openai.codex`, `/Applications/ChatGPT.app`, 26.825.51511), the model is `gpt-5.6-terra`
+   with `[plugins."browser@openai-bundled"] enabled = true` in `~/.codex/config.toml`, and the
+   toggle lives in the **built-in browser** settings pane, not *General* —
+   `settings.browserUse.webMcp.label` = "Enable site tools". The composer also has a **Chat ↔ Work**
+   toggle (`composer.home.modeToggle`), and the in-app browser only exists on the Work side: asked
+   from Chat, the model answers that it cannot open a browser. The fallback, unused: Model Context
+   Tool Inspector + Gemini, which needs `npm install` in the extension's directory to build
+   `js-genai.js` (without it `sidebar.js` dies on its import and every button silently does nothing).
+2. **Passed (Aug 31).** Under `?webmcp=off` the agent still reaches the number — it reads the values
+   printed on the bars — so before and after are filmed in **the same environment, changing only the
+   URL parameter**. Same model, same question, same page.
+
+**Filmed (Sep 1), and the contrast is 7.7×.** The January question — "For the North store, what
+happened to sales in January 2026? Compare the flavor breakdown against December and tell me if
+anything looks off." — asked twice in the ChatGPT app, same model, same page, changing only
+`?webmcp=off`:
+
+| | Without tools (`?webmcp=off`) | With the tools |
+|---|---|---|
+| Time | **4 min 38 s** | **36 s** |
+| Work | navigated the UI month by month; asked to download the page's JS data file (denied) | **5 tool calls** |
+| Result | Dec/Jan table, pistachio 2,099 → 554 (−74%) | same, "fell from third-best seller to last" |
+
+Both are right. The one without tools took **longer than the finished video**, and midway it asked
+permission to download the dashboard's data file — i.e. to stop reading the screen. That was denied
+on camera, on purpose: bypassing the rendered page is exactly what the video says an agent cannot do,
+and in a real app with a backend that file would not be sitting there.
+
+**The wording of question 1 had to change, and that is a finding, not a detail.** The original —
+"Look at the flavor breakdown and tell me if anything looks off" — made the tool-driven agent fail
+**twice in a row**: it fetched January only (`get_sales` + `get_top_flavors` + `compare_periods`) and
+concluded the anomaly was *passion fruit*, the cheapest flavor per unit. With only one month of
+flavor data, pistachio's 554 units is not remarkable. The agent without tools got it right precisely
+because navigating the UI forced it through December as well. Asking for the comparison explicitly
+fixes it without naming pistachio, and it is a question an owner would ask anyway.
+
+**Agents are not deterministic, and the takes prove it.** Across five runs of the same question the
+figures never moved — 15,826 units, $50,800, pistachio 554 against 2,099 — but the conclusion did:
+"an anomaly specific to pistachio", "a sharp discontinuity", "un faltante de inventario", and twice
+the wrong flavor entirely. Film what it says and rewrite the line.
+
+**The narration was rewritten against the filmed runs and rebuilt: 2:32.3, drift 0.000, `HARD CAP
+3:00 — OK`.** `Two minutes thirty-one seconds` → `Four minutes thirty-eight seconds`; `Three calls.
+Eight seconds.` → `Five calls. Thirty-six seconds.`; the February cross-check dropped (this run
+compared against December, not February) in favour of `Every other flavor rose about 24%` and
+`It fell from third best seller, to last`, both of which the agent said on camera; and one new beat
+covers the download attempt.
+
+**Assembled.** `video/raw-before.mov` (6:27) and `video/raw-after.mov` (3:23) concatenated to
+`video/raw.mov`, then:
+
+```bash
+VIDEO_DIR=$PWD/video python3 ~/.claude/skills/personal-record-video/scripts/fit-to-audio.py video/raw.mov \
+  --beats 0,15,293,387,442,478,484,505 --max-speed 20
+VIDEO_DIR=$PWD/video OUTRO="$PWD/video/endcard.png:4" \
+  bash ~/.claude/skills/personal-record-video/scripts/build-video.sh video/out/raw-fitted.mov
+```
+
+→ `video/out/demo.mp4`, **1920×1080, 2:36.3**, plus `video/out/demo.en.srt`.
+
+**No title slide, one end card.** `SLIDE_DUR` has to equal beat 1's full length (12.6 s), and beat 1
+narrates the dashboard — a title card there would replace the thing being described. The outro is
+`video/endcard.png`, 4 s appended (`OUTRO_REPLACE=0`, so it extends rather than covering narration):
+logo mark, name, live URL in indigo mono, repo, `MIT · The WebMCP Challenge`. Rendered from
+`endcard.html` through headless Chrome so it picks up the real IBM Plex faces and the §7 tokens; no
+amber anywhere, since amber means the agent wrote something. The live URL is also visible in the
+built-in browser's address bar for the whole video. The `--max-speed 20`
+is needed for beat 2: 278 s of the agent grinding through the UI compressed into 21 s of narration.
+The marks came from reading the app's own `Working for Xm Ys` timer off a probe frame — at t=150 s
+it read `2m 15s`, so the question was sent at t=15 s.
+
+`video/chatgpt-run.md` has the setup and the exact prompts; `video/shotlist.md` has both takes.
+
+**Environment, verified and used (Sep 1):** *Enable site tools* on (Settings → **Browser** →
+*Permissions*), model `5.6 Terra`, **Work** mode, sidebar collapsed so no project names reach the
+frame. Claude drove the app through computer-use for both takes; the human only pressed
+`Cmd+Shift+5`.
+
+**The language fix is not where it looks, and deleting the line is not enough.** Settings → General
+→ *Language* is already English. Removing "Responder siempre en español" from *Personalization →
+Custom instructions* still produced Spanish answers, because the rest of that document is written in
+Spanish and the model mirrors it. What worked was adding an explicit **`- Always answer in English.`**
+line. Restore both after the shoot — it applies to every chat on the machine.
+
+**Pipeline trap:** `build-audio.sh` wipes `video/out/` entirely. After any narration edit, redo the
+fit as well, not just `build-video.sh`.
+
+**Gate:** under 3 minutes, has audio, uploaded to YouTube as public or unlisted. First two
+met (`demo.mp4`, 2:32.3, with the narration track). **The upload is the only thing left.**
 
 ### Stage 9 — Devpost submission
 
@@ -527,7 +658,24 @@ Against the preview, in Chrome with `chrome://flags/#enable-webmcp-testing` on:
 - [ ] Demo video, under 3 minutes, on YouTube, with audio.
 - [ ] Written description (§10, stage 9).
 - [x] README that assumes nobody runs the code (§10, stage 7).
+- [x] **The no-flag path documented** in the README and in the app's `1e` state (§10, stage 7).
 - [ ] Submitted before **Sep 3, 2026, 1:00 PM PT** (5:00 PM ART).
+
+### No client, no agent — checked, settled (Aug 30)
+
+**The challenge does not ask for one.** The required components are a working live URL, a text
+description, a public repo with the license visible in About, and a demo video under 3 minutes. The
+agent is supplied by the judge: *"Provide a working live URL that judges can access using ChatGPT's
+in-app browser or Google Chrome with WebMCP enabled."* The brief is to build the page that exposes
+the tools, not the software that consumes them — which is what this is. None of the four judging
+criteria mentions a client either.
+
+The four criteria, equally weighted:
+
+- **WebMCP Leverage** — thorough, skilled, non-trivial use of the standard
+- **Execution** — a complete, coherent product, past proof-of-concept
+- **Potential Impact** — credibly solves a real problem for a real audience
+- **Creativity & Ambition** — a novel concept, not a restatement of existing solutions
 
 ### Rules that can wreck an otherwise good submission
 
@@ -555,6 +703,7 @@ Hourly granularity (a real KPI, but it multiplies data volume ~700× without str
 - [webmachinelearning/webmcp issue #11](https://github.com/webmachinelearning/webmcp/issues/11) — the unresolved trust model that the AgentActivityLog answers (§2)
 
 **Chrome and testing**
+- [Site tools in ChatGPT](https://learn.chatgpt.com/docs/webmcp) — the no-flag path, and its exact requirements: desktop app's built-in browser only (no mobile, no web), **GPT-5.6 Sol or Terra** (Luna has WebMCP disabled), not available in Enterprise or Edu workspaces, and the *Settings → Browser → Permissions → Enable site tools* toggle. Its UI is **Site tools** in the address bar, with *Available site tools* and *Recently used*
 - [Secure WebMCP tools](https://developer.chrome.com/docs/ai/webmcp/secure-tools) — the character limits in §5
 - `chrome://flags/#enable-webmcp-testing` — the flag; without it `document.modelContext` is `undefined`
 - [Model Context Tool Inspector](https://github.com/beaufortfrancois/model-context-tool-inspector) — lists registered tools and their schemas

@@ -24,6 +24,13 @@ function NoWebmcp() {
         The 6 tools were not registered on this page, so no agent can read these numbers. The
         dashboard works exactly the same — it reads the same query layer the tools would.
       </p>
+      <p>Open it in the ChatGPT desktop app's built-in browser — no setup:</p>
+      <ol>
+        <li>ChatGPT desktop app</li>
+        <li>Model: GPT-5.6 Sol or Terra</li>
+        <li>Settings → Browser → Enable site tools</li>
+      </ol>
+      <p>Or in Chrome:</p>
       <ol>
         <li>Chrome 149+</li>
         <li>{FLAG_URL}</li>
