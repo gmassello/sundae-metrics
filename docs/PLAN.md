@@ -12,20 +12,20 @@ Single source of truth for the project. Supersedes the earlier `BRIEF.md`, `UI-S
 
 *Sundae Metrics* — a sales dashboard for **Glacé**, a fictional chain of 4 artisanal ice cream shops. The owner has no data analyst: today every question ends in an Excel export.
 
-The scene the demo captures — the owner (or the judge) types to the agent while looking at the same dashboard on screen:
+The scene the demo captures — the owner (or the judge) types to the agent while looking at the same dashboard on screen. **The question that ended up filmed** (§10, stage 8) is the January one, because it is the one the chart cannot answer:
 
-> "How much did sales at the North location change between February and March?"
+> "For the North store, what happened to sales in January 2026? Compare the flavor breakdown against December and tell me if anything looks off."
 
-**Before (no WebMCP)** — what an agent limited to scraping and clicking has to do:
+The simpler February-to-March question survives as the query-layer example below and in the README.
+
+**Before (no WebMCP)** — what an agent limited to the rendered page has to do:
 
 1. Screenshot the dashboard.
 2. Find the store selector in the DOM (a `<select>`? a custom combobox?).
 3. Simulate a click + synthetic event to pick "North".
 4. Wait for a re-render with no clear signal that it finished.
-5. Measure the height of February's bar in pixels. *(non-deterministic)*
-6. Measure the height of March's bar in pixels. *(non-deterministic)*
-7. Convert pixels to a sales value by eye. *(non-deterministic)*
-8. Compute the % change on an already-uncertain number.
+5. Set the month range, twice, through an `<input type="month">`.
+6. Read the values back off the screen and do the arithmetic itself.
 
 **After (with WebMCP)**:
 
@@ -36,9 +36,9 @@ await get_sales({ store: "north", month: "2026-03" });
 await compare_periods({ store: "north", monthA: "2026-02", monthB: "2026-03" });
 ```
 
-Two calls (or one), exact data, zero guessing. The answer is **−17.1%** (§4).
+Two calls (or one), exact data, no reconstruction. The answer is **−17.1%** (§4).
 
-**Film the "before" for real** — a browser-driving agent attempting the same question against `?webmcp=off` (§10, stage 8). A staged contrast is far less convincing than a real one, and Execution is one of the four judging criteria. The decline is deliberate: an agent guessing off a bar that visibly went *down* fails on camera in a way the viewer can see.
+**Film the "before" for real** — the same agent, the same page, against `?webmcp=off` (§10, stage 8). A staged contrast is far less convincing than a real one, and Execution is one of the four judging criteria. **What the real one showed is that the honest claim is cost, not incapacity:** this chart prints its values as text, so the agent reads them and gets the right answer — in **4 min 38 s** instead of 36 s. That is a weaker headline and a much stronger argument, because it survives someone trying it.
 
 ---
 
@@ -48,7 +48,7 @@ Four criteria, equal weight, per the [rules](https://webmcp.devpost.com/rules):
 
 | Criterion | How this case covers it |
 |---|---|
-| WebMCP Leverage | The tools aren't decorative: without them, reading an exact number off a chart is literally impossible to do well. |
+| WebMCP Leverage | The tools aren't decorative, and the gap is measured rather than asserted: same model, same page, 4 min 38 s without them against 36 s with them (§10, stage 8). |
 | Execution | A dashboard with 3–4 views + 6 tools is a complete, demonstrable product within the hackathon timeframe. |
 | Potential Impact | Concrete audience: SMBs with multiple locations and no data analyst. Real problem: today they export everything to Excel. |
 | Creativity & Ambition | Not another checkout flow — avoids competing head-on with the official e-commerce demos from Cloudflare/Vercel/OpenAI. |
@@ -71,7 +71,7 @@ This gives the Potential Impact pitch something better than "I think an owner wo
 
 ### The AgentActivityLog is not cosmetic
 
-The security section of the WebMCP draft was empty for a while, and the user/agent/site trust model is still unresolved in the standard ([issue #11](https://github.com/webmachinelearning/webmcp/issues/11)). A panel that shows, live and unambiguously, which tool the agent called and with what data is the product-level answer to that gap — and it's what the "thoughtful use of WebMCP" criterion is looking for, without narrating it in the video.
+The security section of the WebMCP draft was empty for a while, and how much a site must reveal about what an agent did on it is still unresolved: [issue #11](https://github.com/webmachinelearning/webmcp/issues/11) is prompt injection, [#176](https://github.com/webmachinelearning/webmcp/issues/176) is hints for consequential actions, and neither is settled. A panel that shows, live and unambiguously, which tool the agent called and with what data is the product-level answer to that gap — and it's what the "thoughtful use of WebMCP" criterion is looking for, without narrating it in the video.
 
 ---
 
@@ -493,7 +493,7 @@ The six from §5, with the three rules stated there.
 - `README.md` — line 5 now names both paths, and `## Trying it` is split into **In ChatGPT — nothing to enable in a browser** (desktop app, GPT-5.6 Sol or Terra, *Enable site tools*, *Site tools* in the address bar) followed by **In Chrome — one flag**. The closing paragraph no longer says "without the flag": it says "in a browser without WebMCP support", which is what `?webmcp=off` actually simulates.
 - `src/components/AgentActivityLog.tsx`, the `NoWebmcp` component — two labelled `<ol>` blocks, ChatGPT first and Chrome second, reusing the existing `.nomcp p` / `.nomcp ol` rules: no new CSS, no §7 tokens touched. `Copy flag URL` and `Recheck` unchanged — the flag URL stays the only one of the two paths with anything to copy.
 
-Redeployed with `npx vercel --prod` from local — the GitHub repo is **not** connected, so a push does not redeploy. This edit is what invalidates the already-filmed "before" take: that panel is on camera.
+Redeployed with `npx vercel --prod` from local — the GitHub repo is **not** connected, so a push does not redeploy. This edit invalidated the Chrome "before" take that had already been filmed; both takes were reshot in the ChatGPT app on Sep 1 (stage 8).
 
 ### Stage 8 — Before/after video (<3 min, YouTube, with audio)
 
@@ -501,7 +501,7 @@ Assembled from a written script with a synthetic voice track, not a live voiceov
 rebuilds in seconds and the caption timings are exact by construction. Pipeline and its three
 scripts → the `personal-record-video` skill.
 
-**Done so far:**
+**Done:**
 
 - `video/narration.tsv` — 8 beats, 36 lines. `video/out/narration.wav` — **2:32.3**,
   `HARD CAP 3:00 — OK`, drift 0.000, voice `Ava (Premium)`.
@@ -521,30 +521,29 @@ chart prints its values as text, so it reads them. What it cannot do is get ther
 what the two runs below measure, and it is a stronger claim than "the agent guesses", because it
 survives someone trying it.
 
-**Both takes move to the ChatGPT desktop app's built-in browser** — the environment the judges
-actually use. Hard requirements, all of them blocking:
+**Both takes were shot in the ChatGPT desktop app's built-in browser** — the environment the judges
+actually use. The requirements, all of them blocking:
 
 - Desktop app only. Not mobile, not the web app.
 - **GPT-5.6 Sol or Terra.** Luna has WebMCP disabled.
 - Not available in Enterprise or Edu workspaces; also gated on rollout.
-- **Enable site tools**, which is *not* under a pane called "Browser": it lives in the built-in
-  browser's settings, section *Permissions* (`settings.browserUse.webMcp`).
+- **Enable site tools** — Settings → the built-in browser pane (its subtitle reads "Manage the
+  built-in browser…") → *Permissions*. `settings.browserUse.webMcp`. It is **not** in *General*, and
+  the ChatGPT docs' "Settings → Browser" wording points at the same pane by a different name.
 - The composer's **Chat ↔ Work** toggle on **Work**. The built-in browser does not exist on the Chat
   side; asked from there, the model answers that it cannot open a browser.
 
-**Two gates before filming anything:**
+**Two gates, both passed before filming (Aug 31):**
 
 1. **Passed (Aug 31).** All 6 tools listed, and `compare_periods(north, 2026-02, 2026-03)` came back
    **−17.1% / −15.4%** — the §4 figures. Three things had to line up first, none of them the
-   "Settings → Browser" wording the ChatGPT docs use: the app is the Codex-flavoured desktop build
-   (`com.openai.codex`, `/Applications/ChatGPT.app`, 26.825.51511), the model is `gpt-5.6-terra`
-   with `[plugins."browser@openai-bundled"] enabled = true` in `~/.codex/config.toml`, and the
-   toggle lives in the **built-in browser** settings pane, not *General* —
-   `settings.browserUse.webMcp.label` = "Enable site tools". The composer also has a **Chat ↔ Work**
-   toggle (`composer.home.modeToggle`), and the in-app browser only exists on the Work side: asked
-   from Chat, the model answers that it cannot open a browser. The fallback, unused: Model Context
-   Tool Inspector + Gemini, which needs `npm install` in the extension's directory to build
-   `js-genai.js` (without it `sidebar.js` dies on its import and every button silently does nothing).
+   identifiers above: the app is the Codex-flavoured desktop build (`com.openai.codex`,
+   `/Applications/ChatGPT.app`, 26.825.51511), the model is `gpt-5.6-terra` with
+   `[plugins."browser@openai-bundled"] enabled = true` in `~/.codex/config.toml`, the toggle is
+   `settings.browserUse.webMcp.label` = "Enable site tools", and the composer's mode switch is
+   `composer.home.modeToggle`. The fallback, unused: Model Context Tool Inspector + Gemini, which
+   needs `npm install` in the extension's directory to build `js-genai.js` (without it `sidebar.js`
+   dies on its import and every button silently does nothing).
 2. **Passed (Aug 31).** Under `?webmcp=off` the agent still reaches the number — it reads the values
    printed on the bars — so before and after are filmed in **the same environment, changing only the
    URL parameter**. Same model, same question, same page.
@@ -575,7 +574,8 @@ fixes it without naming pistachio, and it is a question an owner would ask anywa
 
 **Agents are not deterministic, and the takes prove it.** Across five runs of the same question the
 figures never moved — 15,826 units, $50,800, pistachio 554 against 2,099 — but the conclusion did:
-"an anomaly specific to pistachio", "a sharp discontinuity", "un faltante de inventario", and twice
+"an anomaly specific to pistachio", "a sharp discontinuity", "a stock-out or an anomalous figure"
+(that one in Spanish, from a run before the language fix), and twice
 the wrong flavor entirely. Film what it says and rewrite the line.
 
 **The narration was rewritten against the filmed runs and rebuilt: 2:32.3, drift 0.000, `HARD CAP
@@ -601,7 +601,7 @@ VIDEO_DIR=$PWD/video OUTRO="$PWD/video/endcard.png:4" \
 narrates the dashboard — a title card there would replace the thing being described. The outro is
 `video/endcard.png`, 4 s appended (`OUTRO_REPLACE=0`, so it extends rather than covering narration):
 logo mark, name, live URL in indigo mono, repo, `MIT · The WebMCP Challenge`. Rendered from
-`endcard.html` through headless Chrome so it picks up the real IBM Plex faces and the §7 tokens; no
+`video/endcard.html` through headless Chrome so it picks up the real IBM Plex faces and the §7 tokens; no
 amber anywhere, since amber means the agent wrote something. The live URL is also visible in the
 built-in browser's address bar for the whole video. The `--max-speed 20`
 is needed for beat 2: 278 s of the agent grinding through the UI compressed into 21 s of narration.
@@ -610,40 +610,75 @@ it read `2m 15s`, so the question was sent at t=15 s.
 
 `video/chatgpt-run.md` has the setup and the exact prompts; `video/shotlist.md` has both takes.
 
-**Environment, verified and used (Sep 1):** *Enable site tools* on (Settings → **Browser** →
-*Permissions*), model `5.6 Terra`, **Work** mode, sidebar collapsed so no project names reach the
-frame. Claude drove the app through computer-use for both takes; the human only pressed
+**Environment, verified and used (Sep 1):** the four requirements above all met, model
+`5.6 Terra`, sidebar collapsed so no project names reach the frame. Claude drove the app through computer-use for both takes; the human only pressed
 `Cmd+Shift+5`.
 
 **The language fix is not where it looks, and deleting the line is not enough.** Settings → General
-→ *Language* is already English. Removing "Responder siempre en español" from *Personalization →
-Custom instructions* still produced Spanish answers, because the rest of that document is written in
+→ *Language* is already English. Removing the literal line `- Responder siempre en español` from
+*Personalization → Custom instructions* still produced Spanish answers, because the rest of that document is written in
 Spanish and the model mirrors it. What worked was adding an explicit **`- Always answer in English.`**
 line. Restore both after the shoot — it applies to every chat on the machine.
 
 **Pipeline trap:** `build-audio.sh` wipes `video/out/` entirely. After any narration edit, redo the
 fit as well, not just `build-video.sh`.
 
-**Gate:** under 3 minutes, has audio, uploaded to YouTube as public or unlisted. First two
-met (`demo.mp4`, 2:32.3, with the narration track). **The upload is the only thing left.**
+**Gate: met (Sep 1).** https://youtu.be/dK6HtZhCsRE — public, 2:36, with the narration track and `demo.en.srt` uploaded as
+the English caption track. Title, description, live URL and repo link all set on the video.
 
 ### Stage 9 — Devpost submission
 
-Written description covering: why WebMCP fits this use case, what user and agent can do together that they couldn't before, and the technical detail. Include the three free wins: the KPI vocabulary comes from products already sold to real ice cream shops (§2); `order: "bottom"` answers the slow-mover KPI; no tool carries `untrustedContentHint` and there's a stated reason why.
+**Submitted (Sep 1) → https://devpost.com/software/sundae-metrics.** `docs/devpost.md` records the
+entry as submitted — the description body plus the six form fields that live nowhere else in the
+repo (testing instructions for judges, agents tested with, AI tools used, submitter type, country,
+app status). Edits stay open until Sep 3, 1:00 PM PT; the §12 freeze starts after that, not now.
 
-**Gate:** submitted before Sep 3, 1:00 PM PT, with a public repo, a live URL and the video.
+What the entry carries beyond the plan's list: the measured 4m 38s vs 36 s / 5 tool calls table; why
+question 1 had to be reworded (a tool that answers one month invites a one-month answer); the silent
+Chrome limits; and testing instructions for judges with both prompts verbatim, the site-tools toggle
+path for each browser, and `?webmcp=off` as the built-in A/B.
+
+Three parts of the flow needed the human, and no amount of automation removes them: the hackathon
+registration (personal data plus two "I have read and agree" boxes), a reCAPTCHA on *Start project*,
+and the Terms & Conditions checkbox on the final Submit.
+
+**Description edited after submitting (Sep 1, still inside the window).** A documentation audit found
+two things wrong in the text that had been sent: the "pixels do not carry values / unsolvable"
+framing, which the filmed measurement contradicts, and `webmcp#11` cited as the trust model when it
+is titled "Prompt injection". Both fixed on the entry, and the same fixes propagated to `README.md`,
+§1–§2 here and `docs/devpost.md`. Two empty Devpost template headings that had been left at the top
+and bottom of the description were also removed. **Typing into the textarea is the only reliable way
+to edit it** — setting the field's value programmatically looked right on screen and saved nothing.
+
+The description covers what the stage asked for — why WebMCP fits this use case, what user and
+agent can do together that they couldn't before, the technical detail — and all three free wins: the
+KPI vocabulary borrowed from products already sold to real ice cream shops (§2), `order: "bottom"`
+answering the slow-mover KPI with one parameter instead of a seventh tool, and no tool carrying
+`untrustedContentHint` with the reason stated.
+
+**Gate: met (Sep 1).** https://devpost.com/software/sundae-metrics — public repo, live URL and the video all attached.
 
 ---
 
-## 11. End-to-end verification
+## 11. End-to-end verification — **run and passed (Sep 1)**
 
 ```bash
 npm test && npm run build && npm run preview
 ```
 
-Against the preview, in Chrome with `chrome://flags/#enable-webmcp-testing` on:
+**Both agent paths have to be checked, and the ChatGPT one comes first** — it is the environment the
+judges use, and stage 7 was reopened precisely because the docs only covered the flag.
 
-1. The Tool Inspector lists all 6 tools with their schemas.
+**A. ChatGPT desktop app**, built-in browser, requirements per §10 stage 8 (desktop app · Sol or
+Terra · *Enable site tools* · composer on **Work**):
+
+1. "List the site tools this page exposes" returns all 6 names.
+2. `compare_periods(north, 2026-02, 2026-03)` comes back **−17.1% / −15.4%** — the §4 figures.
+3. The January question fills the rail with 5 entries and no more; question 0 leaves none.
+
+**B. Chrome** with `chrome://flags/#enable-webmcp-testing` on, against the preview:
+
+1. The Tool Inspector lists all 6 tools with their schemas (the extension needs Chrome 150+).
 2. `get_sales({store:"north", month:"2026-03"})` returns 39,871 — **the same number the March bar and the KPI card show**.
 3. `compare_periods({store:"north", monthA:"2026-02", monthB:"2026-03"})` returns `-17.1`.
 4. `set_dashboard_view({store:"south"})` changes the screen, shows the amber toast, and leaves a `WRITE`-marked entry in the log.
@@ -655,11 +690,11 @@ Against the preview, in Chrome with `chrome://flags/#enable-webmcp-testing` on:
 
 - [x] Public GitHub repo with an open source license visible **in the About section** — the `LICENSE` file alone isn't enough, it has to be detectable there.
 - [x] Live URL — https://sundae-metrics.vercel.app — working in Chrome with WebMCP enabled.
-- [ ] Demo video, under 3 minutes, on YouTube, with audio.
-- [ ] Written description (§10, stage 9).
+- [x] Demo video, under 3 minutes, on YouTube, with audio — https://youtu.be/dK6HtZhCsRE (2:36, public).
+- [x] Written description (§10, stage 9) — https://devpost.com/software/sundae-metrics
 - [x] README that assumes nobody runs the code (§10, stage 7).
 - [x] **The no-flag path documented** in the README and in the app's `1e` state (§10, stage 7).
-- [ ] Submitted before **Sep 3, 2026, 1:00 PM PT** (5:00 PM ART).
+- [x] Submitted **Sep 1, 2026** — two days early. Devpost confirms edits stay open until Sep 3, 4:00 PM EDT.
 
 ### No client, no agent — checked, settled (Aug 30)
 
@@ -692,6 +727,12 @@ Hourly granularity (a real KPI, but it multiplies data volume ~700× without str
 
 ## 14. Reference links
 
+**Delivered**
+- [youtu.be/dK6HtZhCsRE](https://youtu.be/dK6HtZhCsRE) — the demo video, 2:36, public, captioned
+- [devpost.com/software/sundae-metrics](https://devpost.com/software/sundae-metrics) — the submitted entry
+- [sundae-metrics.vercel.app](https://sundae-metrics.vercel.app) — the live URL the judges open
+- [github.com/gmassello/sundae-metrics](https://github.com/gmassello/sundae-metrics) — the public repo
+
 **Hackathon**
 - [webmcp.devpost.com](https://webmcp.devpost.com/) — the submission page
 - [openai.com/webmcp-challenge](https://openai.com/webmcp-challenge/) — the announcement and framing
@@ -700,28 +741,30 @@ Hourly granularity (a real KPI, but it multiplies data volume ~700× without str
 
 **Standard and types**
 - [`webmcp-types@0.1.5` index.d.ts](https://app.unpkg.com/webmcp-types@0.1.5/files/index.d.ts) — the source that settles where `annotations` goes (§5, rule 1)
-- [webmachinelearning/webmcp issue #11](https://github.com/webmachinelearning/webmcp/issues/11) — the unresolved trust model that the AgentActivityLog answers (§2)
+- [webmachinelearning/webmcp issue #11](https://github.com/webmachinelearning/webmcp/issues/11) — "Prompt injection", open
+- [webmachinelearning/webmcp issue #176](https://github.com/webmachinelearning/webmcp/issues/176) — "Hint for reversible or consequential actions", open. Together with #11 these are the gap the AgentActivityLog answers at product level (§2)
 
 **Chrome and testing**
-- [Site tools in ChatGPT](https://learn.chatgpt.com/docs/webmcp) — the no-flag path, and its exact requirements: desktop app's built-in browser only (no mobile, no web), **GPT-5.6 Sol or Terra** (Luna has WebMCP disabled), not available in Enterprise or Edu workspaces, and the *Settings → Browser → Permissions → Enable site tools* toggle. Its UI is **Site tools** in the address bar, with *Available site tools* and *Recently used*
+- [Site tools in ChatGPT](https://learn.chatgpt.com/docs/webmcp) — the no-flag path, and its exact requirements: desktop app's built-in browser only (no mobile, no web), **GPT-5.6 Sol or Terra** (Luna has WebMCP disabled), not available in Enterprise or Edu workspaces, the *Settings → Browser → Permissions → Enable site tools* toggle, **and the composer's Chat ↔ Work toggle on Work** — the built-in browser does not exist on the Chat side, and the model just answers that it cannot open a browser. Its UI is **Site tools** in the address bar, with *Available site tools* and *Recently used*
 - [Secure WebMCP tools](https://developer.chrome.com/docs/ai/webmcp/secure-tools) — the character limits in §5
 - `chrome://flags/#enable-webmcp-testing` — the flag; without it `document.modelContext` is `undefined`
 - [Model Context Tool Inspector](https://github.com/beaufortfrancois/model-context-tool-inspector) — lists registered tools and their schemas
 - [WebMCP evals](https://developer.chrome.com/docs/ai/webmcp/evals) — test tools before filming
 - [Lighthouse: registered WebMCP tools](https://developer.chrome.com/docs/lighthouse/agentic-browsing/registered-webmcp-tools)
 
-**Sponsor credits — first come, first served (stage 0)**
+**Sponsor credits (stage 0 — closed)**
 - **Vercel:** US$30 in build credits, code `OAIWEBMH-9E2F-MUT4` — first 1,000
 - **Render:** US$50 in credits, valid 1 year — only 500 slots
 - **Netlify:** 3,000 credits, requires a form — first 1,000
 
-They don't change the architecture, but it's free money with an expiration date. Claim before coding, not after.
+None claimed; the project deployed on Vercel's free tier and never needed them. Kept as a record of
+what was on the table.
 
 ---
 
 ## 15. In plain language
 
-Today, if you ask an AI assistant to read a number off a chart on screen, it has to look at the picture and eyeball how tall the bar is. It gets it wrong — and worse, it gets it wrong confidently.
+Today, if you ask an AI assistant about a number on a chart, it has to work the screen like a person would: click around, wait for things to load, and piece the answer together. It usually gets there. What it costs is time — filmed side by side, the same question took four minutes and thirty-eight seconds that way, and thirty-six seconds when the page just hands over the number.
 
 This builds a sales page for an ice cream chain with four locations, where the assistant doesn't have to look at anything: the page itself offers it six "questions it can ask" and answers with the exact number. One of those six runs the other way — the assistant changes what *you* are seeing, so if you say "show me the South location", the screen changes in front of you.
 

@@ -2,6 +2,7 @@
 
 Everything needed to reproduce the agent side of the demo in the ChatGPT desktop app's built-in
 browser. English only: the app must answer in English, because the answers are on camera.
+**Executed Aug 31, filmed Sep 1** — the results are recorded inline below.
 
 ## The app
 
@@ -11,13 +12,16 @@ first one.
 
 ## Setup — four things, all of them blocking
 
-1. **Answers in English.** Settings → General → *Language* is already English — that is not the
-   knob. The Spanish comes from Settings → **Personalization → Custom instructions**, whose first
-   line reads "Responder siempre en español". Change that line for the shoot and restore it after;
-   it applies to every chat on this machine.
-2. **Enable site tools.** Settings → the **built-in browser** pane (the one whose subtitle reads
-   "Manage the built-in browser…"), section *Permissions* → **Enable site tools**. It is *not* in
-   *General*. Its description reads "Allow ChatGPT to discover and call site tools exposed by
+1. **Answers in English — and deleting the Spanish line does not work.** Settings → General →
+   *Language* is already English; that is not the knob. The Spanish comes from Settings →
+   **Personalization → Custom instructions**. Removing the literal line
+   `- Responder siempre en español` from there was tried and the app **still answered in Spanish**, because the rest of that document is written in
+   Spanish and the model mirrors it. What worked was **adding an explicit `- Always answer in
+   English.` line**. Remove it and restore the original after the shoot; it applies to every chat on
+   this machine.
+2. **Enable site tools.** Settings → the **built-in browser** pane (its subtitle reads "Manage the
+   built-in browser…") → *Permissions* → **Enable site tools**. It is *not* in *General*; the
+   ChatGPT docs call the same pane "Browser". Its description reads "Allow ChatGPT to discover and call site tools exposed by
    websites, including WebMCP".
 3. **Work mode.** On the home screen the composer has a **Chat ↔ Work** toggle. The built-in browser
    only exists on the **Work** side — asked from Chat, the model answers that it cannot open a
@@ -28,7 +32,7 @@ first one.
 
 Model: `gpt-5.6-terra` (Sol also works; Luna has WebMCP disabled).
 
-## Run A — with the tools
+## Run A — with the tools (executed Aug 31, filmed Sep 1)
 
 Page: **https://sundae-metrics.vercel.app**
 
@@ -64,8 +68,9 @@ reconcile with the monthly total, and the narration follows whatever it actually
 
 > How many tool calls did that take, and roughly how long?
 
-This replaces the narration's "About 20 calls in 2 seconds", which was measured on a different
-agent. The page's own rail also counts them, until the page is reloaded.
+**Result: 5 tool calls, 36 s** — `get_sales` for January and December, `get_top_flavors` for both,
+and `compare_periods`. That is what beat `1:40` of the narration says. The page's own rail counts
+them too, until the page is reloaded.
 
 ### A5 — the write tool
 
@@ -74,23 +79,27 @@ agent. The page's own rail also counts them, until the page is reloaded.
 Expected: the screen changes on its own, an amber toast appears, and a `WRITE`-marked entry lands in
 the rail with an `Undo` on it.
 
-## Run B — without the tools (Gate 2)
+## Run B — without the tools (Gate 2, passed Aug 31)
 
-open: **https://sundae-metrics.vercel.app/?webmcp=off**  in the built-in browser— same page, tools not registered, rail
-shows "No agent connected".
+Page: **https://sundae-metrics.vercel.app/?webmcp=off** in the built-in browser — same page, tools
+not registered, rail shows "No agent connected".
 
 > How much did North's sales change between February and March 2026?
 
-What matters is not the answer but the cost: how many steps it takes, and whether it trips on the
-month picker (typing a month passes through invalid values and the card reads "No data for this
-range"). If it can still get there, the before and after get filmed in this same environment,
-changing only `?webmcp=off`. If it gives up, the before stays in Chrome with a browser-driving
-agent.
+What mattered was not the answer but the cost. **It reached the number**, so both takes were filmed
+in this same environment, changing only `?webmcp=off`.
 
-## What to bring back
+**The filmed "before" used question A3, not this one** — the before/after pair has to ask the
+identical January question for the contrast to mean anything. Gate 2 used Feb/March only to prove the
+agent could get anywhere at all without the tools.
 
-- A1: the six names — or which ones are missing.
-- A2: the two percentages.
-- A3: its wording for the anomaly, verbatim.
-- A4: number of calls and elapsed time.
-- B: number of steps, and whether it reached the number at all.
+## What came back
+
+- **A1:** all six names, no omissions.
+- **A2:** −17.1% revenue, −15.4% units — the §4 figures to the decimal.
+- **A3:** the anomaly, worded differently on every run. What got filmed: *"pistachio collapsed from
+  2,099 to 554 units (−74%) and fell from third-best seller to last … that sharp pistachio drop looks
+  off … because it runs directly against the otherwise broad January increase."*
+- **A4:** 5 tool calls, 36 s.
+- **B:** it reached the number, in **4 min 38 s**, after asking permission (denied on camera) to
+  download the page's JavaScript data file rather than keep reading the interface.

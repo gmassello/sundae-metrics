@@ -735,7 +735,7 @@ button {
 
 .nomcp ol li {
   padding: 2px 0;
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .nomcp-actions {

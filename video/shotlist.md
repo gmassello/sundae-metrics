@@ -1,113 +1,124 @@
-# Shot list — las dos tomas en la app de ChatGPT
+# Shot list — the two takes, in the ChatGPT app
 
-Before y after se filman en el **mismo entorno**, cambiando sólo `?webmcp=off`. Mismo modelo, misma
-pregunta, misma página: eso es lo que hace honesto el contraste de 2:31 contra 8,5 s.
+**Filmed Sep 1, 2026.** This document stands as the record of what was shot, and as the instructions
+if it ever has to be shot again.
 
-Setup de la app (idioma, *Enable site tools*, modo Work, entorno de navegador) → `chatgpt-run.md`.
+Before and after were filmed in the **same environment**, changing only `?webmcp=off`. Same model,
+same question, same page: that is what makes the **4m 38s against 36 s** contrast honest.
 
-**El idioma es lo primero, y no se arregla donde parece.** *Settings → General → Language* ya está en
-English; el español sale de *Settings → Personalization → Custom instructions*, que tiene pegadas las
-instrucciones globales con "Responder siempre en español" como primera línea. Cambiar esa línea antes
-de filmar y **devolverla al terminar** — aplica a todos los chats de la máquina.
+App setup (language, *Enable site tools*, Work mode, browser environment) → `chatgpt-run.md`.
 
-Grabar con `Cmd+Shift+5` → modo ventana → la ventana de ChatGPT → mic apagado. La ventana muestra el
-chat a la izquierda y el navegador integrado a la derecha; las dos mitades tienen que entrar.
+**Language comes first, and deleting the Spanish line is NOT enough.** *Settings → General →
+Language* is already English. The Spanish comes from *Settings → Personalization → Custom
+instructions*, which holds a pasted copy of the global instructions. Removing the literal line
+`- Responder siempre en español` was tried and **it kept answering in Spanish**, because the rest of
+that document is written in Spanish and the model mirrors it. What worked was **adding `- Always answer in
+English.`**. When you are done, remove that line and put the old one back — it applies to every chat
+on the machine.
 
-Sin apurarse: `fit-to-audio.py` comprime después la espera muerta. Sólo importan el orden y quedarse
-quieto en los money shots 🎯.
+Record with `Cmd+Shift+5` → window mode → the ChatGPT window → mic off. The window shows the chat on
+the left and the built-in browser on the right; both halves have to fit in frame.
 
-## Toma A — "before" · `video/raw-before.mov`
+No rush: `fit-to-audio.py` compresses the dead waiting afterwards. Only the order matters, and
+holding still on the money shots 🎯.
 
-Página: `https://sundae-metrics.vercel.app/?webmcp=off`, recargada, scroll arriba de todo. El rail
-tiene que decir **No agent connected**.
+## Take A — "before" · `video/raw-before.mov`
 
-| # | Acción | Quieto | Beat |
+Page: `https://sundae-metrics.vercel.app/?webmcp=off`, reloaded, scrolled to the top. The rail has to
+read **No agent connected**.
+
+| # | Action | Hold | Beat |
 |---|---|---|---|
-| 1 | Empezar a grabar con el dashboard completo en cuadro | 4 s 🎯 | `0:00` |
-| 2 | Scroll al gráfico: las 12 barras con su valor | 4 s | `0:00` |
-| 3 | Volver arriba, el rail con **No agent connected** legible | 4 s 🎯 | `0:20` |
-| 4 | Pegar la **pregunta 1** → enviar | — | `0:20` |
-| 5 | Dejarlo trabajar sin tocar nada — son ~2 min 30 | 5 s | `0:20` |
-| 6 | La respuesta, con **Worked for 2m 31s** legible arriba | 6 s 🎯 | `0:55` |
+| 1 | Start recording with the whole dashboard in frame | 4 s 🎯 | `0:00` |
+| 2 | Scroll to the chart: the 12 bars with their values | 4 s | `0:00` |
+| 3 | Back to the top, the rail's **No agent connected** legible | 4 s 🎯 | `0:20` |
+| 4 | Paste **question 1** → send | — | `0:20` |
+| 5 | Let it work, touching nothing — about 4 min 40 | 5 s | `0:20` |
+| 6 | The answer, with **Worked for 4m 38s** legible above it | 6 s 🎯 | `0:55` |
 
-**El paso 6 es la toma entera.** El encabezado `Worked for 2m 31s` es la mitad izquierda del
-contraste; si no se lee en cámara, la toma no sirve. Tiene que quedar en el mismo cuadro que las
-554 unidades de pistachio.
+**Step 6 is the whole take.** The `Worked for 4m 38s` header is the left half of the contrast; if it
+does not read on camera, the take is useless, and it has to land in the same frame as pistachio's 554
+units. About three minutes in, the agent asks permission to **download the page's JavaScript data
+file**: answer **Deny**. Downloading `sales.json` is skipping the screen, which is exactly what the
+video says it cannot do.
 
-## Toma B — "after" · `video/raw-after.mov`
+## Take B — "after" · `video/raw-after.mov`
 
-Página: `https://sundae-metrics.vercel.app` (sin el parámetro), **recargada** para que el rail
-arranque en `No calls yet`. Pill verde `WebMCP · 6 tools` visible.
+Page: `https://sundae-metrics.vercel.app` (no parameter), **reloaded** so the rail starts at `No calls
+yet`. The green `WebMCP · 6 tools` pill visible.
 
-| # | Acción | Quieto | Beat |
+| # | Action | Hold | Beat |
 |---|---|---|---|
-| 1 | Empezar a grabar con la pill `WebMCP · 6 tools` y el rail vacío | 4 s 🎯 | `1:10` |
-| 2 | Pegar la **pregunta 0** → enviar; queda la lista de las 6 tools | 5 s 🎯 | `1:10` |
-| 3 | Pegar la **pregunta 1** → enviar | — | `1:40` |
-| 4 | El rail llenándose: 3 entradas y **Worked for ~9s** | 6 s 🎯 | `1:40` |
-| 5 | Click en una entrada del rail para abrir su JSON | 4 s 🎯 | `2:10` |
-| 6 | La respuesta: 554 contra 2.099 y 2.139 | 5 s 🎯 | `2:10` |
-| 7 | Scroll al gráfico: enero, la barra más alta del año | 4 s 🎯 | `2:30` |
-| 8 | Pegar la **pregunta 2** → enviar | — | `2:50` |
-| 9 | Toast ámbar + entrada `WRITE` + chip **Undo** | 5 s 🎯 | `2:50` |
+| 1 | Start recording with the `WebMCP · 6 tools` pill and the empty rail | 4 s 🎯 | `1:10` |
+| 2 | Paste **question 0** → send; the list of the 6 tools comes back | 5 s 🎯 | `1:10` |
+| 3 | Paste **question 1** → send | — | `1:40` |
+| 4 | The rail filling up: 5 entries and **Worked for 36s** | 6 s 🎯 | `1:40` |
+| 5 | Click a rail entry to open its JSON | 4 s 🎯 | `2:10` |
+| 6 | The answer: 554 against 2,099 (December) | 5 s 🎯 | `2:10` |
+| 7 | Scroll to the chart: January, the tallest bar of the year | 4 s 🎯 | `2:30` |
+| 8 | Paste **question 2** → send | — | `2:50` |
+| 9 | Amber toast + `WRITE` entry + **Undo** chip | 5 s 🎯 | `2:50` |
 
-La pregunta 0 **no deja entradas en el rail** — listar las tools no las ejecuta, verificado. Por eso
-el rail queda con exactamente 3 entradas cuando la voz dice "Three calls. Eight seconds.". Si
-aparecen más, la narración se contradice con la pantalla: recargar y rehacer la toma.
+Question 0 **leaves no entries in the rail** — listing the tools does not execute them, verified.
+That is why the rail holds exactly 5 entries when the voice says "Five calls. Thirty-six seconds.".
+If others show up, the narration contradicts the screen: reload and redo the take.
 
-### El paso 7, en detalle
+### Step 7, in detail
 
-Vuelve al **dashboard**, no al chat. Scroll hasta que la card **Monthly revenue** entre completa,
-con las 12 barras y el eje `Sep … Aug`:
+Go back to the **dashboard**, not the chat. Scroll until the **Monthly revenue** card fits whole,
+with the 12 bars and the `Sep … Aug` axis:
 
 ```
 Dec 46,200   Jan 50,800   Feb 48,124
-             ^ la más alta de las doce
+             ^ the tallest of the twelve
 ```
 
-Es el beat `2:30`. El espectador acaba de escuchar que pistachio se derrumbó en enero y ve que enero
-fue el mejor mes del año. Ese choque es el video entero.
+This is beat `2:30`. The viewer has just heard that pistachio collapsed in January, and sees that
+January was the best month of the year. That collision is the entire video.
 
-- **No tocar el selector de meses.** Con el rango `Sep 2025 → Aug 2026` las 12 barras están en
-  indigo y todas muestran su número. Si se acota el rango, las de afuera quedan grises y sin valor.
-- **No clickear las barras**: no tienen tooltip.
-- Va **antes** del paso 8 a propósito: la pregunta 2 cambia el dashboard a South y el gráfico se
-  redibuja.
+- **Do not touch the month selector.** With the `Sep 2025 → Aug 2026` range all 12 bars are indigo
+  and every one shows its number. Narrow the range and the ones outside it go grey and lose their
+  value.
+- **Do not click the bars**: they have no tooltip.
+- It goes **before** step 8 on purpose: question 2 switches the dashboard to South and the chart
+  redraws.
 
-## Para copiar
+## To copy
 
-Pregunta 0 (sólo toma B):
+Question 0 (take B only):
 
 ```
 List the site tools this page exposes.
 ```
 
-Pregunta 1 (las dos tomas, palabra por palabra la misma):
+Question 1 (both takes, word for word identical):
 
 ```
 For the North store, what happened to sales in January 2026? Compare the flavor breakdown against December and tell me if anything looks off.
 ```
 
-Pregunta 2 (sólo toma B):
+Question 2 (take B only):
 
 ```
 Switch the dashboard to the South store.
 ```
 
-## Lo que puede salir distinto
+## What can come out differently
 
-El agente no es determinista. Las tres corridas de verificación dieron los mismos números —
-15.826 unidades, US$ 50.800, pistachio 554 contra 2.099 y 2.139 — pero redactaron la conclusión
-distinto cada vez ("an anomaly specific to pistachio", "a sharp discontinuity", "un faltante de
-inventario"). **Filmar lo que diga y reescribir esa línea de la narración**, no re-preguntar hasta
-que salga la frase linda.
+The agent is not deterministic. All five runs produced the same figures — 15,826 units, US$ 50,800,
+pistachio 554 against 2,099 — but worded the conclusion differently every time ("an anomaly specific
+to pistachio", "a sharp discontinuity", and — in Spanish, from a run before the language fix — "a
+stock-out or an anomalous figure"), and twice went for the wrong flavor entirely under the old
+wording of question 1. **Film what it says and rewrite that line of the
+narration**, rather than re-asking until the pretty phrase comes out.
 
-Los dos números que sí tienen que salir en cámara son los tiempos: **2m 31s** sin tools y **~9 s**
-con tools. Si esta corrida da otros, se corrigen las dos líneas de la narración (`0:55` y `1:40`) y
-se rearma el audio.
+The two numbers that do have to appear on camera are the times. **That contingency already fired:**
+the filmed run gave **4m 38s** and **36 s**, so the two narration lines (`0:55` and `1:40`) were
+rewritten and the audio rebuilt to **2:32.3**. If a reshoot gives different ones, same procedure.
 
-## Entre tomas
+## Between takes
 
-Recargar la página: el estado vive en memoria, así que recargar es el reset. Borrar el `.mov` viejo
-antes de regrabar encima. Después de editar la narración hay que rehacer también el fit, no sólo
-`build-video.sh` — `build-audio.sh` borra `video/out/` entero.
+Reload the page: the state lives in memory, so reloading is the reset. **The delivered `.mov` files
+are `raw-before.mov` (6:27) and `raw-after.mov` (3:23)** — do not overwrite them unless you are
+deliberately reshooting. After editing the narration you have to redo the fit as well, not just
+`build-video.sh` — `build-audio.sh` wipes `video/out/` entirely.
