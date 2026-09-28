@@ -1,0 +1,10 @@
+# criterio	peso	regex — criterios de https://webmcp.devpost.com/rules §7, igual peso; cada fila es una señal que los ganadores mostraron
+WebMCP Leverage: tools dinámicas	25%	unregist|AbortSignal|AbortController|dynamic(ally)? regist|contextual(ly)? regist|tools? (appear|disappear)
+WebMCP Leverage: humano en el loop	25%	human.in.the.loop|approv|propos(e|al)|accept or reject|waits? for (the )?(user|human)
+WebMCP Leverage: errores accionables	25%	structured error|error (message )?(the agent|it can)|recover(able)?
+WebMCP Leverage: estado compartido + undo	25%	undo|same (state|store|model)|shared (state|workspace)|single source of truth
+Execution: tests / E2E	25%	\d[\d,]* (automated )?tests|playwright|vitest|jest
+Execution: demo en vivo	25%	live (demo|app|at)|vercel\.app|netlify\.app|pages\.dev|workers\.dev
+Potential Impact: audiencia real	25%	for (people|users|writers|elders|patients|analysts|teams|managers|owners)|real (problem|audience|user)
+Potential Impact: medición antes/después	25%	without (webmcp|the tools)|baseline|control group|\d+ ?(s|seconds|min) (with|vs)|no-webmcp
+Creativity: problema que solo WebMCP resuelve	25%	only (way|option)|no (backend|server|api)|nothing for a (conventional|classic) mcp|canvas

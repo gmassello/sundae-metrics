@@ -208,6 +208,8 @@ npm run build    # tsc -b && vite build
 
 [docs/PLAN.md](docs/PLAN.md) is the full build plan: data model, the fixed dataset, the tool contracts and the design tokens.
 
+[docs/IMPROVEMENTS.md](docs/IMPROVEMENTS.md) is the post-challenge backlog: what the ten winning entries did and what we would change.
+
 ---
 
 <p align="center"><sub>MIT © 2026 · built for <a href="https://webmcp.devpost.com/">The WebMCP Challenge</a> · <a href="LICENSE">LICENSE</a></sub></p>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang='es'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Competidores — WebMCP Challenge (Alza)</title>
+<style>
+:root {
+  --bg: #fbfaf8; --fg: #1a1b1e; --dim: #62656b; --line: #e2e0dc; --card: #ffffff;
+  --fuerte: #1f7a4d; --fuerte-bg: #e6f4ec;
+  --cumple: #2f6f9f; --cumple-bg: #e7f0f8;
+  --flojo: #9a6212; --flojo-bg: #fbf0dd;
+  --ausente: #a13b32; --ausente-bg: #fbeae8;
+  --sin: #6b3fa0; --sin-bg: #f0e9f9;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0; padding: 32px 16px 64px; background: var(--bg); color: var(--fg);
+  font: 15px/1.6 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--dim); }
+p { margin: 10px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+code {
+  font: 0.86em ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px;
+}
+blockquote {
+  margin: 16px 0; padding: 12px 16px; border-left: 3px solid var(--sin);
+  background: var(--sin-bg); border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0; }
+.wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 0.9rem; background: var(--card); }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+td + td, th + th { border-left: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+th {
+  position: sticky; top: 0; z-index: 1; background: #f1eee9;
+  font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--line);
+}
+tbody tr:nth-child(even) { background: #f7f5f2; }
+tbody tr:hover { background: #eef4fb; }
+table.sortable th { cursor: pointer; user-select: none; }
+table.sortable th::after { content: " \2195"; color: var(--dim); font-size: 0.8em; }
+table.sortable th.asc::after { content: " \2191"; color: var(--fg); }
+table.sortable th.desc::after { content: " \2193"; color: var(--fg); }
+.v { font-weight: 600; border-radius: 4px; padding: 1px 7px; white-space: nowrap; display: inline-block; }
+.v-fuerte { color: var(--fuerte); background: var(--fuerte-bg); }
+.v-cumple { color: var(--cumple); background: var(--cumple-bg); }
+.v-flojo { color: var(--flojo); background: var(--flojo-bg); }
+.v-ausente { color: var(--ausente); background: var(--ausente-bg); }
+.v-sin-evidencia { color: var(--sin); background: var(--sin-bg); outline: 1px dashed var(--sin); }
+details {
+  border: 1px solid var(--line); border-radius: 8px; margin: 12px 0;
+  padding: 0 16px; background: var(--card);
+}
+details[open] { padding-bottom: 12px; }
+summary {
+  cursor: pointer; padding: 12px 0; font-size: 1.05rem; font-weight: 600; list-style-position: outside;
+}
+.pie { color: var(--dim); font-size: 0.85rem; margin-top: 40px; }
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  details { break-inside: avoid; }
+  details:not([open]) > *:not(summary) { display: revert; }
+  table.sortable th { cursor: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Competidores — WebMCP Challenge (Alza)</h1>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Fecha</td><td>2026-09-28</td></tr><tr><td>Modo</td><td>hackathon</td></tr><tr><td>Evaluados</td><td>1 · clonados 1 (borrado) · <strong>nada se ejecuto</strong></td></tr><tr><td>Ventana</td><td>apertura 2026-08-25 (Devpost <code>details/dates</code>) → cierre no consultado</td></tr></tbody></table></div>
+<h2>En criollo</h2>
+<ul><li><strong>Que se miro:</strong> un solo rival, <code>Elioz404/Alza</code>, un editor de planos de casas con vista 3D que un agente de IA maneja por herramientas WebMCP.</li><li><strong>Quien es la amenaza:</strong> Alza, alta: usa las cuatro ideas que el jurado premia (herramientas que aparecen y desaparecen, aprobacion humana, deshacer, errores que el agente puede corregir) y vos solo una.</li><li><strong>Como estamos:</strong> mas tests (50 contra 30) y demo en vivo igual de rapido (0.37 s contra 0.43 s), pero con menos profundidad en el uso de WebMCP.</li><li><strong>Que conviene hacer:</strong> sumar una aprobacion humana antes de escribir y documentar la medicion sin/con herramientas.</li></ul>
+<p><strong>Pesos del jurado</strong> (<code>docs/judging.tsv</code>, criterios de <code>webmcp.devpost.com/rules</code> §7, igual peso):</p>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Peso</th><th>Secciones que lo responden</th></tr></thead><tbody><tr><td>WebMCP Leverage (4 señales)</td><td>25%</td><td>2, 7</td></tr><tr><td>Execution (tests, demo en vivo)</td><td>25%</td><td>1, 6, 10</td></tr><tr><td>Potential Impact (audiencia real, antes/despues)</td><td>25%</td><td>1, 6</td></tr><tr><td>Creativity (problema que solo WebMCP resuelve)</td><td>25%</td><td>7, 4</td></tr></tbody></table></div>
+<p><strong>Lo que no se pudo ver</strong> — el margen de error de todo lo que sigue:</p>
+<ul><li>Solo se evaluo 1 repo; no se busco al resto de los inscriptos, asi que &quot;amenaza&quot; es contra Alza, no contra el campo.</li><li>El video de Alza esta en Devpost [6] pero no se miro: si muestra el producto andando queda <code>sin evidencia</code>.</li><li>Nada se ejecuto: que las herramientas registren y el bloqueo de aprobacion funcionen se lee del codigo, no se vio andar.</li></ul>
+<hr>
+<h2>Tabla comparativa</h2>
+<p>Escala: <code><span class="v v-fuerte">fuerte</span></code> · <code><span class="v v-cumple">cumple</span></code> · <code><span class="v v-flojo">flojo</span></code> · <code><span class="v v-ausente">ausente</span></code> (se miro y no esta) · <code><span class="v v-sin-evidencia">sin evidencia</span></code> (no se pudo ver).</p>
+<div class='wrap'><table class="sortable"><thead><tr><th>Proyecto</th><th>Nicho</th><th>WebMCP Leverage</th><th>Execution</th><th>Potential Impact</th><th>Creativity</th><th>Nota</th><th>Amenaza</th></tr></thead><tbody><tr><td><code>gmassello/sundae-metrics</code> (tuyo)</td><td>Tablero de ventas</td><td><span class="v v-flojo">flojo</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-flojo">flojo</span></td><td><span class="v v-cumple">cumple</span></td><td>6/10</td><td>—</td></tr><tr><td><code>Elioz404/Alza</code></td><td>Planos 2D a 3D</td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-flojo">flojo</span></td><td><span class="v v-fuerte">fuerte</span></td><td>8/10</td><td>alta</td></tr></tbody></table></div>
+<p><strong>Amenaza</strong> es contra *tu* entrada: Alza es de otro nicho pero compite en los mismos cuatro criterios del jurado.</p>
+<hr>
+<details><summary><code>Elioz404/Alza</code> — Alza</summary>
+<p><strong>Que hace:</strong> editor de planos donde una persona y su agente dibujan sobre el mismo modelo y lo suben a 3D.</p>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Repo</td><td><a href="https://github.com/Elioz404/Alza">https://github.com/Elioz404/Alza</a> · creado 2026-09-01 · TypeScript · MIT</td></tr><tr><td>Demo</td><td><a href="https://alza-dev.pages.dev">https://alza-dev.pages.dev</a> · <code>curl</code> 200 en 0.43s [1]</td></tr><tr><td>Devpost</td><td><code>alza</code> · video si (YouTube embebido) [6]</td></tr><tr><td>Equipo</td><td>1 contribuyente · 100% [4]</td></tr><tr><td>Historial</td><td>primer commit 2026-09-01 · 4 commits · previos al evento: no [2]</td></tr></tbody></table></div>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Veredicto</th><th>Evidencia</th></tr></thead><tbody><tr><td>WebMCP Leverage 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>herramientas que se retiran con <code>AbortSignal</code> (bootstrap.ts, registry.ts), puerta de aprobacion para las destructivas, pila de deshacer de 50 pasos [5]</td></tr><tr><td>Execution 25%</td><td><span class="v v-cumple">cumple</span></td><td>30 tests en 2 archivos, <code>vitest</code> en <code>package.json</code>; demo 200 en 0.43s; sin CI (sin workflows, <code>runs</code> vacio) [1][3]</td></tr><tr><td>Potential Impact 25%</td><td><span class="v v-flojo">flojo</span></td><td>README sin comparacion sin/con herramientas (<code>baseline</code> 0 menciones); audiencia dicha en el pitch pero no medida [7]</td></tr><tr><td>Creativity 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>geometria en coordenadas que un agente no maneja como un raton; proveedor en otro origen que publica sus propias herramientas (<code>partner/</code>) [5]</td></tr><tr><td>Seguridad</td><td><span class="v v-cumple">cumple</span></td><td><code>.env</code> commiteado pero solo con 2 URLs publicas, comentado como no secreto; sin credencial expuesta [8]</td></tr></tbody></table></div>
+<p><strong>Lo mas <span class="v v-fuerte">fuerte</span>:</strong> el uso de WebMCP a fondo: herramientas dinamicas, aprobacion humana y deshacer en un mismo producto.</p>
+<p><strong>Donde se cae:</strong> sin CI, sin medicion de impacto, y un unico autor con 4 commits en 2 dias.</p>
+<p><strong><span class="v v-sin-evidencia">sin evidencia</span>:</strong> video sin mirar; funcionamiento real de las herramientas (nada se ejecuto).</p>
+</details>
+<hr>
+<h2>Donde queda tu proyecto</h2>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>tu proyecto</th><th><code>Elioz404/Alza</code></th></tr></thead><tbody><tr><td>Herramientas dinamicas (<code>unregist</code>/<code>AbortSignal</code>)</td><td>0 menciones [5]</td><td>3 y 1 en README, y en <code>src/mcp</code> [5]</td></tr><tr><td>Aprobacion humana antes de escribir</td><td>0 (<code>approv\|propos</code>) [5]</td><td>puerta en <code>registry.ts</code> [5]</td></tr><tr><td>Deshacer</td><td>1 nivel, <code>undo</code> en 5 archivos de <code>src</code> [5]</td><td>pila de 50 pasos [5]</td></tr><tr><td>Tests</td><td>50 casos en 3 archivos [3]</td><td>30 en 2 archivos [3]</td></tr><tr><td>Commits</td><td>14 [4]</td><td>4 [4]</td></tr><tr><td>Demo desplegado</td><td>200 en 0.37s [1]</td><td>200 en 0.43s [1]</td></tr><tr><td>CI (pruebas automaticas)</td><td>sin CI</td><td>sin CI</td></tr><tr><td>Antes/despues sin herramientas</td><td><code>?webmcp=off</code> existe en el video; <code>baseline</code> en 1 archivo de <code>src</code> [7]</td><td>0 menciones [7]</td></tr></tbody></table></div>
+<h3>Sugerencias</h3>
+<div class='wrap'><table><thead><tr><th>#</th><th>Sugerencia</th><th>Por que importa</th><th>Criterio (peso)</th><th>Origen</th><th>Evidencia</th><th>Esfuerzo</th><th>Mueve nota</th></tr></thead><tbody><tr><td>S-01</td><td>Poner una aprobacion humana antes de <code>set_dashboard_view</code></td><td>El jurado premia que la persona confirme lo que el agente cambia</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td>Alza tiene puerta, tuyo 0 menciones [5]</td><td>medio</td><td>si</td></tr><tr><td>S-02</td><td>Registrar o retirar herramientas segun la pantalla (por ejemplo, solo mostrar la de deshacer despues de escribir)</td><td>Es la señal de WebMCP que hoy solo tiene Alza</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td>Alza usa <code>AbortSignal</code>, tuyo 0 [5]</td><td>medio</td><td>si</td></tr><tr><td>S-03</td><td>Publicar en el README la medicion sin/con herramientas (la toma <code>?webmcp=off</code>) con numeros</td><td>Impacto solo se cree si esta medido</td><td>Potential Impact (25%)</td><td>hueco</td><td>ni Alza ni tuyo la tienen en el README [7]</td><td>bajo</td><td>si</td></tr><tr><td>S-04</td><td>Agregar un flujo de GitHub Actions que corra <code>npm test</code></td><td>Ninguno de los dos tiene CI; el primero en mostrarlo se separa</td><td>Execution (25%)</td><td>hueco</td><td>sin <code>.github</code> en ambos [3]</td><td>bajo</td><td>si</td></tr><tr><td>S-05</td><td>Sumar estrellas o topics al repo</td><td>Casi nadie lo pondera</td><td>—</td><td>—</td><td>Alza tiene 3 estrellas [1]</td><td>bajo</td><td><strong>cosmetico</strong></td></tr></tbody></table></div>
+<blockquote><p>Control de sesgo: tu proyecto salio peor o igual en 5 de 8 filas, no mejor en todas. Las celdas <code>cumple</code> propias (tests, demo) se re-miraron con el mismo comando.</p></blockquote>
+<hr>
+<details><summary>Apendice — como se midio</summary>
+<div class='wrap'><table><thead><tr><th>Ref</th><th>Comando</th></tr></thead><tbody><tr><td>[1]</td><td><code>curl -s -o /dev/null -w &#x27;%{http_code} %{time_total}s&#x27; &lt;url del demo&gt;</code></td></tr><tr><td>[2]</td><td><code>gh api &quot;repos/&lt;o&gt;/&lt;r&gt;/commits?until=2026-08-25T19:00:00Z&amp;per_page=1&quot; --jq length</code> y <code>git log --reverse --format=&#x27;%ad %s&#x27; --date=short \| head -3</code></td></tr><tr><td>[3]</td><td><code>grep -cE &#x27;\\b(it\|test)\\(&#x27; tests/*.test.ts</code> (Alza) y en <code>src/lib/*.test.ts</code> (propio); <code>ls .github</code> y <code>gh run list</code></td></tr><tr><td>[4]</td><td><code>git rev-list --count HEAD</code> y <code>gh api repos/&lt;o&gt;/&lt;r&gt;/contributors</code></td></tr><tr><td>[5]</td><td><code>grep -iE &#x27;unregist\|AbortSignal\|approv\|undo&#x27; src/mcp/*.ts src/model/store.ts</code> y <code>grep -icE</code> sobre el README</td></tr><tr><td>[6]</td><td><code>curl -sL -A curl/8 https://devpost.com/software/alza \| grep -oiE &#x27;youtube[^&quot;]{0,40}\|github.com/[A-Za-z0-9_/-]+&#x27;</code></td></tr><tr><td>[7]</td><td><code>grep -icE &#x27;baseline\|without (webmcp\|the tools)&#x27; README.md</code></td></tr><tr><td>[8]</td><td><code>git ls-files \| grep -iE &#x27;\.env$&#x27;</code> y lectura del <code>.env</code> con los valores ocultos</td></tr></tbody></table></div>
+</details>
+<p class='pie'>Generado desde el .md por hackathon-scrape-participants (Parte D). El .md es la fuente: este archivo no se edita a mano.</p>
+</main>
+<script>
+const RANK = {"sin evidencia":0,"ausente":1,"flojo":2,"cumple":3,"fuerte":4,
+              "baja":0,"media":1,"alta":2};
+const key = (td) => {
+  const raw = td.textContent.trim();
+  const low = raw.toLowerCase();
+  for (const word in RANK) if (low.includes(word)) return [0, RANK[word]];
+  const num = parseFloat(raw.replace(",", "."));
+  if (!isNaN(num) && /^[\d.,\s/]+$/.test(raw)) return [0, num];
+  return [1, low];
+};
+document.querySelectorAll("table.sortable th").forEach((th, i) => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const body = table.tBodies[0];
+    const desc = !th.classList.contains("desc");
+    table.querySelectorAll("th").forEach(o => o.classList.remove("asc", "desc"));
+    th.classList.add(desc ? "desc" : "asc");
+    [...body.rows]
+      .sort((a, b) => {
+        const [ka, va] = key(a.cells[i]), [kb, vb] = key(b.cells[i]);
+        if (ka !== kb) return ka - kb;
+        const cmp = typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "es");
+        return desc ? -cmp : cmp;
+      })
+      .forEach(row => body.appendChild(row));
+  });
+});
+</script>
+</body>
+</html>

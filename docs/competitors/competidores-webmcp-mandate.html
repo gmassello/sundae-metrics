@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang='es'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Competidores — webmcp (Mandate)</title>
+<style>
+:root {
+  --bg: #fbfaf8; --fg: #1a1b1e; --dim: #62656b; --line: #e2e0dc; --card: #ffffff;
+  --fuerte: #1f7a4d; --fuerte-bg: #e6f4ec;
+  --cumple: #2f6f9f; --cumple-bg: #e7f0f8;
+  --flojo: #9a6212; --flojo-bg: #fbf0dd;
+  --ausente: #a13b32; --ausente-bg: #fbeae8;
+  --sin: #6b3fa0; --sin-bg: #f0e9f9;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0; padding: 32px 16px 64px; background: var(--bg); color: var(--fg);
+  font: 15px/1.6 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--dim); }
+p { margin: 10px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+code {
+  font: 0.86em ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px;
+}
+blockquote {
+  margin: 16px 0; padding: 12px 16px; border-left: 3px solid var(--sin);
+  background: var(--sin-bg); border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0; }
+.wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 0.9rem; background: var(--card); }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+td + td, th + th { border-left: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+th {
+  position: sticky; top: 0; z-index: 1; background: #f1eee9;
+  font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--line);
+}
+tbody tr:nth-child(even) { background: #f7f5f2; }
+tbody tr:hover { background: #eef4fb; }
+table.sortable th { cursor: pointer; user-select: none; }
+table.sortable th::after { content: " \2195"; color: var(--dim); font-size: 0.8em; }
+table.sortable th.asc::after { content: " \2191"; color: var(--fg); }
+table.sortable th.desc::after { content: " \2193"; color: var(--fg); }
+.v { font-weight: 600; border-radius: 4px; padding: 1px 7px; white-space: nowrap; display: inline-block; }
+.v-fuerte { color: var(--fuerte); background: var(--fuerte-bg); }
+.v-cumple { color: var(--cumple); background: var(--cumple-bg); }
+.v-flojo { color: var(--flojo); background: var(--flojo-bg); }
+.v-ausente { color: var(--ausente); background: var(--ausente-bg); }
+.v-sin-evidencia { color: var(--sin); background: var(--sin-bg); outline: 1px dashed var(--sin); }
+details {
+  border: 1px solid var(--line); border-radius: 8px; margin: 12px 0;
+  padding: 0 16px; background: var(--card);
+}
+details[open] { padding-bottom: 12px; }
+summary {
+  cursor: pointer; padding: 12px 0; font-size: 1.05rem; font-weight: 600; list-style-position: outside;
+}
+.pie { color: var(--dim); font-size: 0.85rem; margin-top: 40px; }
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  details { break-inside: avoid; }
+  details:not([open]) > *:not(summary) { display: revert; }
+  table.sortable th { cursor: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Competidores — webmcp (Mandate)</h1>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Fecha</td><td>2026-09-28</td></tr><tr><td>Modo</td><td>hackathon</td></tr><tr><td>Evaluados</td><td>1 · clonados 1 · <strong>nada se ejecuto</strong></td></tr><tr><td>Ventana</td><td>submissions: fecha de apertura no legible en <code>/details/dates</code> (<span class="v v-sin-evidencia">sin evidencia</span>); el repo rival se creo 2026-08-29 [1]</td></tr></tbody></table></div>
+<h2>En criollo</h2>
+<ul><li><strong>Que se miro:</strong> un solo rival, <code>HarzerHeribert/webMCP</code> (&quot;Mandate&quot;), contra <code>gmassello/sundae-metrics</code>, con las mismas sondas.</li><li><strong>Quien es la amenaza:</strong> Mandate, alta. Su README y su Devpost se presentan como ganador del concurso, y sus 58 casos de prueba mas 251 verificaciones cubren el criterio &quot;humano en el loop&quot; que el nuestro no toca [2][3].</li><li><strong>Como estamos:</strong> mejor en simpleza y claridad (demo 0.21 s, un solo dataset); peor en ingenieria de permisos, pruebas de navegador y documentacion.</li><li><strong>Que conviene hacer:</strong> medir y publicar el antes/despues (con y sin WebMCP) y agregar una confirmacion humana antes de escribir.</li></ul>
+<p><strong>Pesos del jurado</strong> (de <code>docs/judging.tsv</code>, criterios de <code>webmcp.devpost.com/rules</code>; los cuatro pesan igual):</p>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Peso</th><th>Secciones que lo responden</th></tr></thead><tbody><tr><td>WebMCP Leverage</td><td>25%</td><td>2, 7</td></tr><tr><td>Execution</td><td>25%</td><td>4, 5, 6, 10</td></tr><tr><td>Potential Impact</td><td>25%</td><td>1, 6</td></tr><tr><td>Creativity</td><td>25%</td><td>7, 4</td></tr></tbody></table></div>
+<p><strong>Lo que no se pudo ver</strong> — el margen de error de todo lo que sigue:</p>
+<ul><li>La fecha de apertura del evento: la pagina <code>/details/dates</code> devolvio solo el pie de pagina, asi que &quot;commits previos al evento&quot; queda sin evidencia [1].</li><li>Si las pruebas pasan: no se ejecuto nada, solo se contaron.</li><li>El video de Mandate: existe en Devpost (YouTube) [4], pero no se miro su contenido.</li></ul>
+<hr>
+<h2>Tabla comparativa</h2>
+<p>Escala: <code><span class="v v-fuerte">fuerte</span></code> · <code><span class="v v-cumple">cumple</span></code> · <code><span class="v v-flojo">flojo</span></code> · <code><span class="v v-ausente">ausente</span></code> (se miro y no esta) · <code><span class="v v-sin-evidencia">sin evidencia</span></code> (no se pudo ver).</p>
+<div class='wrap'><table class="sortable"><thead><tr><th>Proyecto</th><th>Nicho</th><th>WebMCP Leverage</th><th>Execution</th><th>Potential Impact</th><th>Creativity</th><th>Nota</th><th>Amenaza</th></tr></thead><tbody><tr><td><code>HarzerHeribert/webMCP</code></td><td>permisos acotados para agentes (CRM)</td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-fuerte">fuerte</span></td><td>8/10</td><td>alta</td></tr><tr><td><code>gmassello/sundae-metrics</code> (tuyo)</td><td>dashboard de ventas que un agente lee exacto</td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-cumple">cumple</span></td><td>6/10</td><td>—</td></tr></tbody></table></div>
+<p><strong>Amenaza</strong> es contra *tu* entrada, no calidad absoluta: aca ambos usan WebMCP pero resuelven problemas distintos (permisos vs lectura exacta).</p>
+<hr>
+<details><summary><code>HarzerHeribert/webMCP</code> — Mandate</summary>
+<p><strong>Que hace:</strong> una persona define que puede tocar un agente y por cuanto tiempo, y el servidor rechaza todo lo que se salga de ese permiso.</p>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Repo</td><td><a href="https://github.com/HarzerHeribert/webMCP">https://github.com/HarzerHeribert/webMCP</a> · creado 2026-08-29 · TypeScript · MIT</td></tr><tr><td>Demo</td><td><a href="https://webmcp-weld.vercel.app">https://webmcp-weld.vercel.app</a> · <code>curl</code> 200 en 0.38s [5]</td></tr><tr><td>Devpost</td><td>mandate-ix29ek · video si (YouTube) [4]</td></tr><tr><td>Equipo</td><td>1 contribuyente humano · 50/50 commits en el clone (mas 1 de bot &quot;Claude&quot;) [6]</td></tr><tr><td>Historial</td><td>primer commit 2026-08-29 (init de especificacion, 3 lineas) · 85 commits [7] · previos al evento: <span class="v v-sin-evidencia">sin evidencia</span></td></tr></tbody></table></div>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Veredicto</th><th>Evidencia</th></tr></thead><tbody><tr><td>WebMCP Leverage 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>11 codigos de error tipados (<code>OUT_OF_SCOPE</code>, <code>HUMAN_CONFIRMATION_REQUIRED</code>, <code>POLICY_CHANGED</code>...); cambios &quot;staged&quot; y sin herramienta de apply; notas sobre Chrome 152 y <code>AbortSignal</code> en el adaptador [8]</td></tr><tr><td>Execution 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>58 tests (38 unit/integracion + 20 navegador), 251 <code>expect</code> [2]; demo 200 en 0.38s [5]; <strong>sin CI (nadie corre sus pruebas solo)</strong> [9]</td></tr><tr><td>Potential Impact 25%</td><td><span class="v v-cumple">cumple</span></td><td>caso CRM concreto; plan de comparacion con &quot;baseline generico&quot; solo en <code>docs/08_EVAL_AND_TEST_PLAN.md</code>, sin resultado publicado [10]</td></tr><tr><td>Creativity 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>herramientas que se achican cuando el permiso se achica, mas rechazo del servidor a cada llamada [8]</td></tr><tr><td>Documentacion</td><td><span class="v v-fuerte">fuerte</span></td><td>22 docs numerados en <code>docs/</code>, README 1916 palabras [11]</td></tr><tr><td>Calidad de codigo</td><td><span class="v v-cumple">cumple</span></td><td>eslint con 0 warnings permitidos, 16373 lineas sin lockfile ni media [12]</td></tr><tr><td>Seguridad</td><td><span class="v v-cumple">cumple</span></td><td>ningun <code>.env</code>/<code>.pem</code> en el arbol ni en el historial; sin patrones de claves [13]</td></tr></tbody></table></div>
+<p><strong>Lo mas <span class="v v-fuerte">fuerte</span>:</strong> ingenieria de permisos con 11 errores tipados y 251 verificaciones [2][8].</p>
+<p><strong>Donde se cae:</strong> sin CI, y el antes/despues esta planeado pero no medido [9][10].</p>
+<p><strong><span class="v v-sin-evidencia">sin evidencia</span>:</strong> fecha de apertura del evento, resultado de las pruebas, contenido del video.</p>
+</details>
+<hr>
+<h2>Donde queda tu proyecto</h2>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>tu proyecto</th><th><code>HarzerHeribert/webMCP</code></th></tr></thead><tbody><tr><td>Tools con alta/baja dinamica (<code>unregister</code>/<code>AbortSignal</code>)</td><td>0 apariciones [8]</td><td>adaptador lo maneja, con nota de que Chrome 152 no puede deshacer [8]</td></tr><tr><td>Humano en el loop (aprobar antes de escribir)</td><td>0 archivos con approve/propose/confirm [14]</td><td>cambios &quot;staged&quot; + <code>HUMAN_CONFIRMATION_REQUIRED</code> [8]</td></tr><tr><td>Undo / estado compartido</td><td>si, <code>undo</code> en <code>store.ts</code>, un nivel [8]</td><td>si, en adaptador e inspector [8]</td></tr><tr><td>Tests / asserts</td><td>50 <code>it/test</code>, 82 <code>expect</code> [2] (CLAUDE.md dice 56)</td><td>58 <code>it/test</code>, 251 <code>expect</code> [2]</td></tr><tr><td>Tests de navegador (E2E)</td><td>0</td><td>20 (Playwright) [2]</td></tr><tr><td>Commits</td><td>14 desde 2026-08-27 [7]</td><td>85 desde 2026-08-29 [7]</td></tr><tr><td>CI</td><td>sin CI [9]</td><td>sin CI [9]</td></tr><tr><td>Demo desplegado</td><td>200 en 0.21s [5]</td><td>200 en 0.38s [5]</td></tr><tr><td>Antes/despues medido</td><td><code>?webmcp=off</code> existe, sin numeros [14]</td><td>planeado, sin resultado [10]</td></tr></tbody></table></div>
+<h3>Sugerencias</h3>
+<div class='wrap'><table><thead><tr><th>#</th><th>Sugerencia</th><th>Por que importa</th><th>Criterio (peso)</th><th>Origen</th><th>Evidencia</th><th>Esfuerzo</th><th>Mueve nota</th></tr></thead><tbody><tr><td>S-01</td><td>Medir y publicar el antes/despues (con y sin WebMCP, tiempo y exactitud)</td><td>es la unica forma de probar que la herramienta sirve, y nadie lo publico</td><td>Potential Impact (25%)</td><td>hueco</td><td>ni tu repo ni Mandate tienen resultado medido [10][14]</td><td>medio</td><td>si</td></tr><tr><td>S-02</td><td>Agregar confirmacion humana antes de <code>set_dashboard_view</code></td><td>el jurado busca que la persona controle al agente</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td>Mandate: <code>HUMAN_CONFIRMATION_REQUIRED</code>; tu repo: 0 [8][14]</td><td>medio</td><td>si</td></tr><tr><td>S-03</td><td>Agregar pruebas de navegador (Playwright) sobre las 6 tools</td><td>hoy solo se prueba logica, no la pantalla</td><td>Execution (25%)</td><td>brecha</td><td>20 E2E de Mandate contra 0 tuyos [2]</td><td>medio</td><td>si</td></tr><tr><td>S-04</td><td>Sumar un workflow minimo de GitHub que corra <code>npm test</code></td><td>prueba que los 56 tests corren solos; ninguno lo tiene</td><td>Execution (25%)</td><td>hueco</td><td>0 workflows en ambos [9]</td><td>bajo</td><td>si</td></tr><tr><td>S-05</td><td>Registrar/quitar herramientas segun la vista (<code>unregister</code>/<code>AbortSignal</code>)</td><td>Mandate lo usa, es señal de uso profundo de WebMCP</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td>0 apariciones tuyas contra adaptador de Mandate [8]</td><td>medio</td><td>si</td></tr><tr><td>S-06</td><td>Estrellas, topics, largo del README</td><td>el jurado no los pondera</td><td>—</td><td>—</td><td>Mandate tiene 0 estrellas [1]</td><td>bajo</td><td><strong>cosmetico</strong></td></tr></tbody></table></div>
+<blockquote><p>Control de sesgo: tu proyecto sale peor o igual en 8 de 9 filas de la comparacion, asi que no sale mejor en todo. Las celdas mas comodas (demo rapido, dataset claro) se revisaron: solo el tiempo de demo favorece a tu proyecto, y 0.21 s contra 0.38 s no mueve una nota.</p></blockquote>
+<hr>
+<details><summary>Apendice — como se midio</summary>
+<div class='wrap'><table><thead><tr><th>Ref</th><th>Comando</th></tr></thead><tbody><tr><td>[1]</td><td><code>jq &#x27;{fork,stars:.stargazers_count,created:.created_at,pushed:.pushed_at,license:.license.spdx_id,homepage,archived}&#x27; webMCP.json</code> y <code>curl -s https://webmcp.devpost.com/details/dates</code> (sin fechas legibles)</td></tr><tr><td>[2]</td><td><code>grep -rEo &#x27;^\s*(it\|test)\(&#x27; tests e2e \| wc -l</code> y <code>grep -rEo &#x27;expect\(&#x27; tests e2e \| wc -l</code> (idem <code>src</code> en el repo propio)</td></tr><tr><td>[3]</td><td><code>head -40 webMCP.readme</code> (badge y texto &quot;Winner&quot;); <code>grep -ci winner</code> en la pagina de Devpost = 2</td></tr><tr><td>[4]</td><td><code>curl -s https://devpost.com/software/mandate-ix29ek \| grep -oiE &#x27;youtube.com/embed/[A-Za-z0-9_-]+&#x27;</code></td></tr><tr><td>[5]</td><td><code>curl -s -o /dev/null -w &#x27;%{http_code} %{time_total}s&#x27; &lt;url&gt;</code> (webmcp-weld.vercel.app y sundae-metrics.vercel.app)</td></tr><tr><td>[6]</td><td><code>git shortlog -sn HEAD</code> en el clone (<code>--depth 50</code>, 51 commits visibles)</td></tr><tr><td>[7]</td><td><code>gh api &quot;repos/HarzerHeribert/webMCP/commits?per_page=100&quot;</code> (fechas) y <code>git rev-list --count HEAD</code>; root real por API: 3 lineas, &quot;initialize specification repository&quot;</td></tr><tr><td>[8]</td><td><code>grep -rnE &#x27;registerTool\|unregister\|AbortSignal\|AbortController&#x27; src</code>, <code>grep -oE &quot;&#x27;[A-Z_]{6,}&#x27;&quot; server/core/errors.ts</code>, <code>grep -rliE &#x27;staged\|approve\|propose&#x27; src server</code>, <code>grep -rliE &#x27;undo&#x27; src</code></td></tr><tr><td>[9]</td><td><code>grep -c &#x27;.github/workflows&#x27; webMCP.tree</code> = 0; <code>gh run list</code> = <code>[]</code></td></tr><tr><td>[10]</td><td><code>grep -rniE &#x27;baseline\|without webmcp\|control group&#x27; README.md docs</code></td></tr><tr><td>[11]</td><td><code>grep -c &#x27;docs/&#x27; webMCP.tree</code>; <code>wc -w webMCP.readme</code></td></tr><tr><td>[12]</td><td><code>git ls-files \| grep -vE &#x27;package-lock\|node_modules\|dist/\|docs/media&#x27; \| xargs wc -l \| tail -1</code>; <code>grep &#x27;&quot;lint&quot;&#x27; package.json</code></td></tr><tr><td>[13]</td><td><code>git ls-files \| grep -iE &#x27;(^\|/)\.env$\|\.pem$&#x27;</code>; <code>git log --all --diff-filter=A --name-only --format= \| grep -iE &#x27;\.env$\|\.pem$&#x27;</code>; <code>grep -rnE &#x27;sk-[A-Za-z0-9]{20}\|AKIA[0-9A-Z]{16}\|BEGIN (RSA\|PRIVATE)&#x27; .</code> (todo vacio)</td></tr><tr><td>[14]</td><td><code>grep -rliE &#x27;approv\|propos\|confirm&#x27; src</code> (vacio) y <code>grep -ciE &#x27;without\|baseline\|webmcp=off&#x27; README.md</code> = 5 (solo describe el toggle)</td></tr></tbody></table></div>
+</details>
+<p class='pie'>Generado desde el .md por hackathon-scrape-participants (Parte D). El .md es la fuente: este archivo no se edita a mano.</p>
+</main>
+<script>
+const RANK = {"sin evidencia":0,"ausente":1,"flojo":2,"cumple":3,"fuerte":4,
+              "baja":0,"media":1,"alta":2};
+const key = (td) => {
+  const raw = td.textContent.trim();
+  const low = raw.toLowerCase();
+  for (const word in RANK) if (low.includes(word)) return [0, RANK[word]];
+  const num = parseFloat(raw.replace(",", "."));
+  if (!isNaN(num) && /^[\d.,\s/]+$/.test(raw)) return [0, num];
+  return [1, low];
+};
+document.querySelectorAll("table.sortable th").forEach((th, i) => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const body = table.tBodies[0];
+    const desc = !th.classList.contains("desc");
+    table.querySelectorAll("th").forEach(o => o.classList.remove("asc", "desc"));
+    th.classList.add(desc ? "desc" : "asc");
+    [...body.rows]
+      .sort((a, b) => {
+        const [ka, va] = key(a.cells[i]), [kb, vb] = key(b.cells[i]);
+        if (ka !== kb) return ka - kb;
+        const cmp = typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "es");
+        return desc ? -cmp : cmp;
+      })
+      .forEach(row => body.appendChild(row));
+  });
+});
+</script>
+</body>
+</html>

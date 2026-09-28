@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang='es'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Competidores — WebMCP Challenge</title>
+<style>
+:root {
+  --bg: #fbfaf8; --fg: #1a1b1e; --dim: #62656b; --line: #e2e0dc; --card: #ffffff;
+  --fuerte: #1f7a4d; --fuerte-bg: #e6f4ec;
+  --cumple: #2f6f9f; --cumple-bg: #e7f0f8;
+  --flojo: #9a6212; --flojo-bg: #fbf0dd;
+  --ausente: #a13b32; --ausente-bg: #fbeae8;
+  --sin: #6b3fa0; --sin-bg: #f0e9f9;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0; padding: 32px 16px 64px; background: var(--bg); color: var(--fg);
+  font: 15px/1.6 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--dim); }
+p { margin: 10px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+code {
+  font: 0.86em ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px;
+}
+blockquote {
+  margin: 16px 0; padding: 12px 16px; border-left: 3px solid var(--sin);
+  background: var(--sin-bg); border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0; }
+.wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 0.9rem; background: var(--card); }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+td + td, th + th { border-left: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+th {
+  position: sticky; top: 0; z-index: 1; background: #f1eee9;
+  font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--line);
+}
+tbody tr:nth-child(even) { background: #f7f5f2; }
+tbody tr:hover { background: #eef4fb; }
+table.sortable th { cursor: pointer; user-select: none; }
+table.sortable th::after { content: " \2195"; color: var(--dim); font-size: 0.8em; }
+table.sortable th.asc::after { content: " \2191"; color: var(--fg); }
+table.sortable th.desc::after { content: " \2193"; color: var(--fg); }
+.v { font-weight: 600; border-radius: 4px; padding: 1px 7px; white-space: nowrap; display: inline-block; }
+.v-fuerte { color: var(--fuerte); background: var(--fuerte-bg); }
+.v-cumple { color: var(--cumple); background: var(--cumple-bg); }
+.v-flojo { color: var(--flojo); background: var(--flojo-bg); }
+.v-ausente { color: var(--ausente); background: var(--ausente-bg); }
+.v-sin-evidencia { color: var(--sin); background: var(--sin-bg); outline: 1px dashed var(--sin); }
+details {
+  border: 1px solid var(--line); border-radius: 8px; margin: 12px 0;
+  padding: 0 16px; background: var(--card);
+}
+details[open] { padding-bottom: 12px; }
+summary {
+  cursor: pointer; padding: 12px 0; font-size: 1.05rem; font-weight: 600; list-style-position: outside;
+}
+.pie { color: var(--dim); font-size: 0.85rem; margin-top: 40px; }
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  details { break-inside: avoid; }
+  details:not([open]) > *:not(summary) { display: revert; }
+  table.sortable th { cursor: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Competidores — WebMCP Challenge</h1>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Fecha</td><td>2026-09-28</td></tr><tr><td>Modo</td><td>hackathon</td></tr><tr><td>Evaluados</td><td>1 (<code>ergjus/aisle</code>) + proyecto propio · clonados 1 (borrado) · <strong>nada se ejecuto</strong></td></tr><tr><td>Ventana</td><td>submissions 2026-08-25 → 2026-09-04 [1]</td></tr></tbody></table></div>
+<h2>En criollo</h2>
+<ul><li><strong>Que se miro:</strong> un solo rival, <code>ergjus/aisle</code>, contra tu <code>gmassello/sundae-metrics</code>, con las mismas sondas.</li><li><strong>Quien es la amenaza:</strong> Aisle. Es un plano de mesas de boda donde el agente mueve invitados a la vista, con más de 30 herramientas y 107 pruebas [7].</li><li><strong>Como estamos:</strong> Aisle gana en 3 de 4 criterios. Vos ganás en medir antes/después: 4 min 38 s contra 36 s en tu README [8].</li><li><strong>Que conviene hacer:</strong> sumar herramientas que aparecen según el estado, y pedirle permiso al humano antes de escribir.</li></ul>
+<p><strong>Pesos del jurado</strong> (<code>docs/judging.tsv</code>, reglas del evento): 4 pilares de 25% cada uno.</p>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Peso</th><th>Secciones que lo responden</th></tr></thead><tbody><tr><td>WebMCP Leverage (tools dinámicas, humano en el loop, errores, estado compartido)</td><td>25%</td><td>2, 4, 7</td></tr><tr><td>Execution (tests, demo en vivo)</td><td>25%</td><td>6, 8, 10</td></tr><tr><td>Potential Impact (audiencia real, antes/después)</td><td>25%</td><td>1, 6</td></tr><tr><td>Creativity (problema que solo WebMCP resuelve)</td><td>25%</td><td>7</td></tr></tbody></table></div>
+<p>Sin peso en el evento (va en la ficha, no en la tabla): CI (pruebas automáticas en la nube), seguridad, equipo.</p>
+<p><strong>Lo que no se pudo ver:</strong></p>
+<ul><li>El video de Aisle no se miró: no se sabe si muestra el producto o slides.</li><li>No se probó ninguna herramienta contra un agente real: se leyó el código, no se ejecutó.</li><li>Otros inscriptos no entraron al set: quien trabaja en privado es invisible, no débil.</li></ul>
+<hr>
+<h2>Tabla comparativa</h2>
+<p>Escala: <code><span class="v v-fuerte">fuerte</span></code> · <code><span class="v v-cumple">cumple</span></code> · <code><span class="v v-flojo">flojo</span></code> · <code><span class="v v-ausente">ausente</span></code> (se miro y no esta) · <code><span class="v v-sin-evidencia">sin evidencia</span></code> (no se pudo ver).</p>
+<div class='wrap'><table class="sortable"><thead><tr><th>Proyecto</th><th>Nicho</th><th>WebMCP Leverage 25%</th><th>Execution 25%</th><th>Impact 25%</th><th>Creativity 25%</th><th>Nota</th><th>Amenaza</th></tr></thead><tbody><tr><td><code>ergjus/aisle</code></td><td>Plano de mesas de boda</td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-fuerte">fuerte</span></td><td>8/10</td><td>alta</td></tr><tr><td><code>gmassello/sundae-metrics</code> (propio)</td><td>Dashboard de ventas</td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-cumple">cumple</span></td><td>7/10</td><td>—</td></tr></tbody></table></div>
+<p><strong>Amenaza</strong> es contra *tu* entrada: Aisle compite por el mismo jurado y el mismo pilar más pesado, aunque el nicho sea otro.</p>
+<hr>
+<details><summary><code>ergjus/aisle</code> — Aisle</summary>
+<p><strong>Que hace:</strong> una pareja y su agente arman juntos el plano de mesas de la boda, con un cursor que mueve a los invitados a la vista.</p>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Repo</td><td><a href="https://github.com/ergjus/aisle">https://github.com/ergjus/aisle</a> · creado 2026-08-28 · TypeScript · MIT [2]</td></tr><tr><td>Demo</td><td><a href="https://aisle-three.vercel.app">https://aisle-three.vercel.app</a> · <code>curl</code> 200 en 0.26s [3]</td></tr><tr><td>Devpost</td><td><code>aisle-ai-wedding-seating</code> · video si (youtu.be/81zaJ8tASLo, no visto) [4]</td></tr><tr><td>Equipo</td><td>1 contribuyente (<code>ergjus</code>, 19 commits) · reparto 100% [5]</td></tr><tr><td>Historial</td><td>primer commit 2026-08-27 · 19 commits · previos a la apertura (2026-08-25): no [1]</td></tr></tbody></table></div>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Veredicto</th><th>Evidencia</th></tr></thead><tbody><tr><td>Leverage: tools dinámicas 25%</td><td><span class="v v-fuerte">fuerte</span></td><td><code>finalize_chart</code> existe solo con todos sentados y 0 reglas rotas; adaptador con <code>AbortSignal</code> (7 coincidencias en el README [8]) [6]</td></tr><tr><td>Leverage: humano en el loop</td><td><span class="v v-fuerte">fuerte</span></td><td><code>ask_human</code> espera hasta ~90 s la respuesta; <code>propose_arrangement</code> con banner Keep/Revert [6]</td></tr><tr><td>Leverage: errores accionables</td><td><span class="v v-cumple">cumple</span></td><td>7 usos de <code>isError</code>; &quot;una mesa llena falla con la lista de mesas libres&quot; [6]</td></tr><tr><td>Leverage: estado compartido + undo</td><td><span class="v v-fuerte">fuerte</span></td><td><code>undo</code>/<code>redo</code> sobre el mismo historial del ⌘Z humano [6]</td></tr><tr><td>Execution: tests</td><td><span class="v v-fuerte">fuerte</span></td><td>107 tests, 287 <code>expect</code>, 15 archivos [7]</td></tr><tr><td>Execution: demo en vivo</td><td><span class="v v-fuerte">fuerte</span></td><td>200 en 0.26s, título propio [3]</td></tr><tr><td>Impact: audiencia real</td><td><span class="v v-cumple">cumple</span></td><td>parejas planeando una boda; 1 mención de &quot;for users&quot; [8]</td></tr><tr><td>Impact: antes/después</td><td><span class="v v-ausente">ausente</span></td><td>0 coincidencias de baseline o &quot;without WebMCP&quot; en el README [8]</td></tr><tr><td>Creativity</td><td><span class="v v-fuerte">fuerte</span></td><td>canvas + cursor del agente, sin backend [8]</td></tr><tr><td>Sin CI (nadie corre sus pruebas solo)</td><td><span class="v v-ausente">ausente</span> (sin CI)</td><td>0 workflows, <code>gh run list</code> vacío [9]</td></tr><tr><td>Seguridad</td><td><span class="v v-cumple">cumple</span></td><td>0 <code>.env</code> en historial, 0 patrones de clave [10]</td></tr></tbody></table></div>
+<p><strong>Lo mas <span class="v v-fuerte">fuerte</span>:</strong> más de 30 herramientas y las dos señales de Leverage que vos no tenés (dinámicas y espera al humano).</p>
+<p><strong>Donde se cae:</strong> ninguna medición antes/después (0 coincidencias [8]) y un solo autor.</p>
+<p><strong><span class="v v-sin-evidencia">sin evidencia</span>:</strong> si el video muestra el producto; si <code>ask_human</code> funciona en ChatGPT real.</p>
+</details>
+<hr>
+<h2>Donde queda tu proyecto</h2>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>tu proyecto</th><th><code>ergjus/aisle</code></th></tr></thead><tbody><tr><td>Tools dinámicas (unregister, AbortSignal)</td><td>0 [8]</td><td>7 [8]</td></tr><tr><td>Humano en el loop</td><td>0 [8]</td><td>8 [8]</td></tr><tr><td>Antes/después medido</td><td>3 (4 min 38 s vs 36 s) [8]</td><td>0 [8]</td></tr><tr><td>Tests (<code>it(</code>/<code>test(</code>)</td><td>50 [7]</td><td>107 [7]</td></tr><tr><td>Commits</td><td>14 [1]</td><td>19 [1]</td></tr><tr><td>Endpoint desplegado</td><td>200 en 0.65s [3]</td><td>200 en 0.26s [3]</td></tr><tr><td>Herramientas</td><td>6 [6]</td><td>más de 30 [6]</td></tr></tbody></table></div>
+<h3>Sugerencias</h3>
+<div class='wrap'><table><thead><tr><th>#</th><th>Sugerencia</th><th>Por que importa</th><th>Criterio (peso)</th><th>Origen</th><th>Evidencia</th><th>Esfuerzo</th><th>Mueve nota</th></tr></thead><tbody><tr><td>S-01</td><td>Una herramienta que aparezca o desaparezca según el estado (ej. exportar solo con vista cargada)</td><td>El jurado busca herramientas que cambian con el contexto</td><td>Leverage (25%)</td><td>brecha</td><td>Aisle 7 coincidencias, vos 0 [8]</td><td>medio</td><td>si</td></tr><tr><td>S-02</td><td>Que <code>set_dashboard_view</code> proponga y espere un OK del humano</td><td>Hoy el agente cambia la pantalla sin preguntar</td><td>Leverage (25%)</td><td>brecha</td><td>Aisle 8, vos 0 [8]</td><td>medio</td><td>si</td></tr><tr><td>S-03</td><td>Sumar una prueba de punta a punta (Playwright) además de las 50 unitarias</td><td>Aisle duplica tus pruebas y tiene tests de componentes</td><td>Execution (25%)</td><td>brecha</td><td>107 vs 50 [7]</td><td>medio</td><td>si</td></tr><tr><td>S-04</td><td>Subir a la primera línea de Devpost el 4 min 38 s vs 36 s</td><td>Es el único dato de impacto medido del set</td><td>Impact (25%)</td><td>hueco</td><td>Aisle 0 vs vos 3 [8]</td><td>bajo</td><td>si</td></tr><tr><td>S-05</td><td>Más estrellas o topics en el repo</td><td>Ningún criterio del jurado lo mide</td><td>—</td><td>—</td><td>—</td><td>bajo</td><td><strong>cosmetico</strong></td></tr></tbody></table></div>
+<blockquote><p>Control de sesgo: en el criterio de impacto salgo mejor, en los otros tres peor. No salió parejo a favor: la ventaja de 1 de 4 es medida, no cómoda. Ojo: la nota de Leverage propia es <code>cumple</code> por 6 herramientas y errores como texto (README y CLAUDE.md), sin ejecutar nada.</p></blockquote>
+<hr>
+<details><summary>Apendice — como se midio</summary>
+<div class='wrap'><table><thead><tr><th>Ref</th><th>Comando</th></tr></thead><tbody><tr><td>[1]</td><td><code>gh api &quot;repos/ergjus/aisle/commits?until=2026-08-25T15:00:00Z&amp;per_page=1&quot; --jq length</code> (devolvió 0); <code>git log --reverse --format=&#x27;%ad %s&#x27; --date=short \| head -3</code>; <code>git rev-list --count HEAD</code>; fechas de <code>webmcp.devpost.com/details/dates</code></td></tr><tr><td>[2]</td><td><code>jq &#x27;{fork,stars:.stargazers_count,created:.created_at,pushed:.pushed_at,lang:.language,license:.license.spdx_id,homepage,archived}&#x27; aisle.json</code> (fork false)</td></tr><tr><td>[3]</td><td><code>curl -s -o /dev/null -w &#x27;%{http_code} %{time_total}s&#x27; https://aisle-three.vercel.app</code> y <code>https://sundae-metrics.vercel.app</code></td></tr><tr><td>[4]</td><td><code>curl -s -A &#x27;curl/8&#x27; https://devpost.com/software/aisle-ai-wedding-seating</code> (el slug <code>aisle</code> es otro proyecto, NoelVFX/Aisle)</td></tr><tr><td>[5]</td><td><code>gh api repos/ergjus/aisle/contributors --jq &#x27;.[] \| &quot;\(.login) \(.contributions)&quot;&#x27;</code> y <code>git shortlog -sn</code></td></tr><tr><td>[6]</td><td><code>grep -n</code> sobre <code>src/webmcp/adapter.ts</code> y <code>tools.ts</code> del clone (registerTool, AbortSignal, <code>finalize_chart</code>, <code>ask_human</code>, <code>isError</code>) y tabla de herramientas del README</td></tr><tr><td>[7]</td><td><code>grep -rEc &quot;^\s*(it\|test)\(&quot; src --include=&#x27;*.test.ts*&#x27;</code> y <code>grep -rc &quot;expect(&quot;</code> en cada repo</td></tr><tr><td>[8]</td><td><code>grep -icE</code> de las 9 regex de <code>docs/judging.tsv</code> contra <code>&lt;repo&gt;.readme</code></td></tr><tr><td>[9]</td><td><code>grep -E &#x27;^\.github/workflows/&#x27; aisle.tree</code> y <code>gh run list --repo ergjus/aisle --limit 10</code></td></tr><tr><td>[10]</td><td><code>git log --all --diff-filter=A --name-only --format= \| grep -iE &#x27;\.env$\|\.pem$&#x27;</code> y <code>grep -rEl</code> de patrones de clave</td></tr></tbody></table></div>
+</details>
+<p class='pie'>Generado desde el .md por hackathon-scrape-participants (Parte D). El .md es la fuente: este archivo no se edita a mano.</p>
+</main>
+<script>
+const RANK = {"sin evidencia":0,"ausente":1,"flojo":2,"cumple":3,"fuerte":4,
+              "baja":0,"media":1,"alta":2};
+const key = (td) => {
+  const raw = td.textContent.trim();
+  const low = raw.toLowerCase();
+  for (const word in RANK) if (low.includes(word)) return [0, RANK[word]];
+  const num = parseFloat(raw.replace(",", "."));
+  if (!isNaN(num) && /^[\d.,\s/]+$/.test(raw)) return [0, num];
+  return [1, low];
+};
+document.querySelectorAll("table.sortable th").forEach((th, i) => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const body = table.tBodies[0];
+    const desc = !th.classList.contains("desc");
+    table.querySelectorAll("th").forEach(o => o.classList.remove("asc", "desc"));
+    th.classList.add(desc ? "desc" : "asc");
+    [...body.rows]
+      .sort((a, b) => {
+        const [ka, va] = key(a.cells[i]), [kb, vb] = key(b.cells[i]);
+        if (ka !== kb) return ka - kb;
+        const cmp = typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "es");
+        return desc ? -cmp : cmp;
+      })
+      .forEach(row => body.appendChild(row));
+  });
+});
+</script>
+</body>
+</html>

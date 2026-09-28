@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang='es'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Competidores — webmcp (WebMCP Challenge)</title>
+<style>
+:root {
+  --bg: #fbfaf8; --fg: #1a1b1e; --dim: #62656b; --line: #e2e0dc; --card: #ffffff;
+  --fuerte: #1f7a4d; --fuerte-bg: #e6f4ec;
+  --cumple: #2f6f9f; --cumple-bg: #e7f0f8;
+  --flojo: #9a6212; --flojo-bg: #fbf0dd;
+  --ausente: #a13b32; --ausente-bg: #fbeae8;
+  --sin: #6b3fa0; --sin-bg: #f0e9f9;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0; padding: 32px 16px 64px; background: var(--bg); color: var(--fg);
+  font: 15px/1.6 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--dim); }
+p { margin: 10px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+code {
+  font: 0.86em ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px;
+}
+blockquote {
+  margin: 16px 0; padding: 12px 16px; border-left: 3px solid var(--sin);
+  background: var(--sin-bg); border-radius: 0 6px 6px 0;
+}
+blockquote p { margin: 0; }
+.wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 0.9rem; background: var(--card); }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+td + td, th + th { border-left: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+th {
+  position: sticky; top: 0; z-index: 1; background: #f1eee9;
+  font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--line);
+}
+tbody tr:nth-child(even) { background: #f7f5f2; }
+tbody tr:hover { background: #eef4fb; }
+table.sortable th { cursor: pointer; user-select: none; }
+table.sortable th::after { content: " \2195"; color: var(--dim); font-size: 0.8em; }
+table.sortable th.asc::after { content: " \2191"; color: var(--fg); }
+table.sortable th.desc::after { content: " \2193"; color: var(--fg); }
+.v { font-weight: 600; border-radius: 4px; padding: 1px 7px; white-space: nowrap; display: inline-block; }
+.v-fuerte { color: var(--fuerte); background: var(--fuerte-bg); }
+.v-cumple { color: var(--cumple); background: var(--cumple-bg); }
+.v-flojo { color: var(--flojo); background: var(--flojo-bg); }
+.v-ausente { color: var(--ausente); background: var(--ausente-bg); }
+.v-sin-evidencia { color: var(--sin); background: var(--sin-bg); outline: 1px dashed var(--sin); }
+details {
+  border: 1px solid var(--line); border-radius: 8px; margin: 12px 0;
+  padding: 0 16px; background: var(--card);
+}
+details[open] { padding-bottom: 12px; }
+summary {
+  cursor: pointer; padding: 12px 0; font-size: 1.05rem; font-weight: 600; list-style-position: outside;
+}
+.pie { color: var(--dim); font-size: 0.85rem; margin-top: 40px; }
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  details { break-inside: avoid; }
+  details:not([open]) > *:not(summary) { display: revert; }
+  table.sortable th { cursor: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Competidores — webmcp (WebMCP Challenge)</h1>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Fecha</td><td>2026-09-28</td></tr><tr><td>Modo</td><td>hackathon</td></tr><tr><td>Evaluados</td><td>1 · clonados 1 (borrado) · <strong>nada se ejecuto</strong></td></tr><tr><td>Ventana</td><td>submissions 2026-08-25 → 2026-09-04 (fuente: <code>webmcp.devpost.com/details/dates</code> [1])</td></tr></tbody></table></div>
+<h2>En criollo</h2>
+<ul><li><strong>Que se miro:</strong> <code>sebastianfernandezgarcia/roque-nights</code>, un planificador de noches de observacion astronomica, contra <code>gmassello/sundae-metrics</code>.</li><li><strong>Quien es la amenaza:</strong> Roque Nights, y es alta. Tiene 15 herramientas (nosotros 6), 807 pruebas automaticas (nosotros 50) y un demo en linea que responde.</li><li><strong>Como estamos:</strong> detras en casi todo lo que el jurado pesa; adelante solo en que tenemos video publicado y ellos no lo confirmamos.</li><li><strong>Que conviene hacer:</strong> sumar lo que ellos tienen y nosotros no: herramientas que aparecen y desaparecen, aprobacion humana de lo que propone el agente, y una medicion con y sin WebMCP.</li></ul>
+<p><strong>Pesos del jurado</strong> (de <code>docs/judging.tsv</code>, reglas §7, cuatro criterios de igual peso):</p>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Peso</th><th>Señales que lo responden</th></tr></thead><tbody><tr><td>WebMCP Leverage</td><td>25%</td><td>herramientas dinamicas, humano en el loop, errores accionables, estado compartido + undo</td></tr><tr><td>Execution</td><td>25%</td><td>pruebas / E2E, demo en vivo</td></tr><tr><td>Potential Impact</td><td>25%</td><td>audiencia real, medicion antes/despues</td></tr><tr><td>Creativity</td><td>25%</td><td>problema que solo WebMCP resuelve</td></tr></tbody></table></div>
+<p><strong>Lo que no se pudo ver:</strong></p>
+<ul><li>La pagina de Devpost del competidor: <code>devpost.com/software/roque-nights</code> da 404 y no hay otro enlace en su repo [2].</li><li>El video: su <code>docs/devpost.md</code> dice &quot;YouTube URL, to add&quot; [3]; hay guion y subtitulos, no un video confirmado.</li><li>Ninguna prueba se ejecuto: <code>807</code> cuenta declaraciones de test, no que pasen.</li></ul>
+<hr>
+<h2>Tabla comparativa</h2>
+<p>Escala: <code><span class="v v-fuerte">fuerte</span></code> · <code><span class="v v-cumple">cumple</span></code> · <code><span class="v v-flojo">flojo</span></code> · <code><span class="v v-ausente">ausente</span></code> (se miro y no esta) · <code><span class="v v-sin-evidencia">sin evidencia</span></code> (no se pudo ver).</p>
+<div class='wrap'><table class="sortable"><thead><tr><th>Proyecto</th><th>Nicho</th><th>WebMCP Leverage 25%</th><th>Execution 25%</th><th>Impact 25%</th><th>Creativity 25%</th><th>Nota</th><th>Amenaza</th></tr></thead><tbody><tr><td><code>sebastianfernandezgarcia/roque-nights</code></td><td>planificador de noche de estrellas</td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-fuerte">fuerte</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-fuerte">fuerte</span></td><td>9/10</td><td>alta</td></tr><tr><td><code>gmassello/sundae-metrics</code> (propio)</td><td>panel de ventas de helados</td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-cumple">cumple</span></td><td><span class="v v-flojo">flojo</span></td><td><span class="v v-cumple">cumple</span></td><td>6/10</td><td>—</td></tr></tbody></table></div>
+<p><strong>Amenaza</strong> es contra *tu* entrada: aca comparten idea (pagina cliente sin servidor) y el rival la lleva mas lejos.</p>
+<hr>
+<details><summary><code>sebastianfernandezgarcia/roque-nights</code> — Roque Nights</summary>
+<p><strong>Que hace:</strong> un mapa del cielo donde la persona y el agente manejan el mismo instrumento y el agente propone un plan que la persona acepta o rechaza.</p>
+<div class='wrap'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Repo</td><td><a href="https://github.com/sebastianfernandezgarcia/roque-nights">https://github.com/sebastianfernandezgarcia/roque-nights</a> · creado 2026-09-02 · TypeScript · MIT [4]</td></tr><tr><td>Demo</td><td><a href="https://roque-nights.netlify.app">https://roque-nights.netlify.app</a> · <code>curl</code> 200 en 0.82s [5]</td></tr><tr><td>Devpost</td><td><span class="v v-sin-evidencia">sin evidencia</span> (404) · video <span class="v v-sin-evidencia">sin evidencia</span> [2]</td></tr><tr><td>Equipo</td><td>1 contribuyente · 17 commits, 100% de una persona [6]</td></tr><tr><td>Historial</td><td>primer commit 2026-08-31 · 17 commits · previos al evento: no (0 antes del 2026-08-25) [7]</td></tr></tbody></table></div>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>Veredicto</th><th>Evidencia</th></tr></thead><tbody><tr><td>WebMCP Leverage 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>15 herramientas; 4 se registran y se sacan segun el estado; <code>AbortSignal</code> en 4 archivos; plan propuesto que el humano acepta item por item; deshacer con token; errores con razon [8]</td></tr><tr><td>Execution 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>50 archivos de test, 807 declaraciones <code>it</code>/<code>test</code>; demo 200 en 0.82s; sin CI (sin workflows, no es &quot;roto&quot;) [9]</td></tr><tr><td>Impact 25%</td><td><span class="v v-cumple">cumple</span></td><td>audiencia real declarada (autor trabaja en un telescopio en La Palma) [3]; 0 menciones de medicion antes/despues en el README [8]</td></tr><tr><td>Creativity 25%</td><td><span class="v v-fuerte">fuerte</span></td><td>&quot;no hay API; un MCP clasico no tiene nada que envolver&quot;; formulario declarativo ademas de herramientas [8]</td></tr><tr><td>Calidad de codigo</td><td><span class="v v-cumple">cumple</span></td><td>~55.000 lineas sin json/imagenes [10]; oxlint presente; sin vendorizados versionados</td></tr><tr><td>Seguridad</td><td><span class="v v-cumple">cumple</span></td><td>sin <code>.env</code> ni <code>.pem</code> en el arbol ni en el historial [11]</td></tr></tbody></table></div>
+<p><strong>Lo mas <span class="v v-fuerte">fuerte</span>:</strong> WebMCP usado a fondo: 15 herramientas, 4 contextuales y aprobacion humana.</p>
+<p><strong>Donde se cae:</strong> sin medicion con/sin WebMCP (0 coincidencias) y sin CI.</p>
+<p><strong><span class="v v-sin-evidencia">sin evidencia</span>:</strong> Devpost, video, y si las 807 pruebas pasan.</p>
+</details>
+<hr>
+<h2>Donde queda tu proyecto</h2>
+<div class='wrap'><table><thead><tr><th>Criterio</th><th>tu proyecto</th><th><code>roque-nights</code></th></tr></thead><tbody><tr><td>Herramientas WebMCP</td><td>6, todas fijas</td><td>15, 4 contextuales</td></tr><tr><td>Registro dinamico (<code>unregister</code>/<code>AbortSignal</code>)</td><td><span class="v v-ausente">ausente</span>: 0 archivos [12]</td><td>4 archivos [8]</td></tr><tr><td>Humano aprueba lo que propone el agente</td><td><span class="v v-ausente">ausente</span>: 0 coincidencias en <code>src</code> [12]</td><td><code>propose_plan</code> + <code>commit_proposal</code></td></tr><tr><td>Undo</td><td>si: <code>undoView</code>, un nivel [12]</td><td>token de undo en <code>clear_plan</code></td></tr><tr><td>Tests</td><td>3 archivos, 50 declaraciones</td><td>50 archivos, 807</td></tr><tr><td>Medicion con/sin WebMCP</td><td><span class="v v-flojo">flojo</span>: 3 menciones en README, sin cifras propias [12]</td><td>0 menciones</td></tr><tr><td>Commits</td><td>14, desde 2026-08-27</td><td>17, desde 2026-08-31</td></tr><tr><td>Demo desplegado</td><td>200 en 0.38s [12]</td><td>200 en 0.82s</td></tr><tr><td>Video</td><td>publicado en YouTube (link en README) [12]</td><td><span class="v v-sin-evidencia">sin evidencia</span></td></tr></tbody></table></div>
+<h3>Sugerencias</h3>
+<div class='wrap'><table><thead><tr><th>#</th><th>Sugerencia</th><th>Por que importa</th><th>Criterio (peso)</th><th>Origen</th><th>Evidencia</th><th>Esfuerzo</th><th>Mueve nota</th></tr></thead><tbody><tr><td>S-01</td><td>Herramienta que propone y un boton de aceptar/rechazar antes de escribir</td><td>El jurado mira si la persona controla al agente</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td><code>roque-nights</code> tiene <code>propose_plan</code>/<code>commit_proposal</code>; nosotros 0 [8][12]</td><td>medio</td><td>si</td></tr><tr><td>S-02</td><td>Registrar/sacar herramientas segun el estado (ej. <code>undo</code> solo tras una escritura)</td><td>Muestra uso real de la API de WebMCP</td><td>WebMCP Leverage (25%)</td><td>brecha</td><td>4 archivos con <code>AbortSignal</code>/<code>unregister</code> contra 0 [8][12]</td><td>medio</td><td>si</td></tr><tr><td>S-03</td><td>Publicar una medicion con y sin WebMCP con cifras (tiempo, aciertos)</td><td>Es la unica señal de impacto que ninguno mide</td><td>Impact (25%)</td><td>hueco</td><td>0 menciones en <code>roque-nights</code>; nosotros solo texto sin cifras [8][12]</td><td>medio</td><td>si</td></tr><tr><td>S-04</td><td>Subir la suite de tests y agregar un E2E</td><td>Compite contra 807 declaraciones</td><td>Execution (25%)</td><td>brecha</td><td>50 contra 807 [9]</td><td>alto</td><td>si</td></tr><tr><td>S-05</td><td>Agregar un workflow de CI que corra <code>npm test</code></td><td>Ninguno del set tiene CI</td><td>Execution (25%)</td><td>hueco</td><td>0 workflows en ambos [9][12]</td><td>bajo</td><td>si</td></tr><tr><td>S-06</td><td>Estrellas, topics, tamaño del README</td><td>Ningun criterio del jurado lo pondera</td><td>—</td><td>—</td><td>0 estrellas en el rival [4]</td><td>bajo</td><td><strong>cosmetico</strong></td></tr></tbody></table></div>
+<blockquote><p>Control de sesgo: tu proyecto se evaluo con las mismas sondas y salio peor o igual en todos los criterios menos el video. Las celdas mas comodas (demo y video) se volvieron a mirar: el demo del rival responde, el video del rival no se pudo ver, no que no exista.</p></blockquote>
+<hr>
+<details><summary>Apendice — como se midio</summary>
+<div class='wrap'><table><thead><tr><th>Ref</th><th>Comando</th></tr></thead><tbody><tr><td>[1]</td><td><code>curl -s https://webmcp.devpost.com/details/dates \| sed &#x27;s/&lt;[^&gt;]*&gt;//g&#x27; \| grep -iE &#x27;20(26\|25)&#x27;</code></td></tr><tr><td>[2]</td><td><code>curl -s -o /dev/null -w &#x27;%{http_code}&#x27; https://devpost.com/software/roque-nights</code></td></tr><tr><td>[3]</td><td><code>grep -niE &#x27;youtu\|devpost\.com/software\|video&#x27; README.md docs/devpost.md</code></td></tr><tr><td>[4]</td><td><code>jq &#x27;{fork,stars:.stargazers_count,created:.created_at,lang:.language,license:.license.spdx_id,homepage,archived}&#x27; roque-nights.json</code></td></tr><tr><td>[5]</td><td><code>curl -s -o /dev/null -w &#x27;%{http_code} %{time_total}s&#x27; https://roque-nights.netlify.app</code></td></tr><tr><td>[6]</td><td><code>gh api repos/sebastianfernandezgarcia/roque-nights/contributors --jq &#x27;.[] \| &quot;\(.login) \(.contributions)&quot;&#x27;</code></td></tr><tr><td>[7]</td><td><code>gh api &quot;repos/…/roque-nights/commits?until=2026-08-25T00:00:00Z&amp;per_page=1&quot; --jq &#x27;length&#x27;</code> y <code>git log --reverse --format=&#x27;%ad %s&#x27; --date=short \| head -3</code></td></tr><tr><td>[8]</td><td><code>grep -icE &#x27;&lt;regex de docs/judging.tsv&gt;&#x27; roque-nights.readme</code> (una por señal)</td></tr><tr><td>[9]</td><td><code>grep -cE &#x27;\.test\.&#x27; roque-nights.tree</code>; <code>grep -rhoE &#x27;\b(it\|test)\(&#x27; src --include=&#x27;*.test.ts&#x27; \| wc -l</code>; <code>grep -cE &#x27;^\.github&#x27; roque-nights.tree</code>; <code>roque-nights.runs</code> = <code>[]</code></td></tr><tr><td>[10]</td><td><code>git ls-files \| grep -vE &#x27;node_modules/\|dist/\|screenshots/\|package-lock\|\.json$\|\.png$\|\.srt$&#x27; \| xargs wc -l \| tail -1</code></td></tr><tr><td>[11]</td><td><code>grep -iE &#x27;(^\|/)\.env$\|\.pem$&#x27; roque-nights.tree</code>; <code>git log --all --diff-filter=A --name-only --format= \| grep -iE &#x27;\.env$\|\.pem$&#x27;</code> (0 salidas)</td></tr><tr><td>[12]</td><td>en el repo propio: <code>grep -rilE &#x27;unregist\|AbortSignal&#x27; src</code>; <code>grep -rlE &#x27;undoView&#x27; src</code>; <code>grep -rliE &#x27;propos\|approv&#x27; src</code>; <code>git ls-files \| grep -cE &#x27;\.test\.&#x27;</code>; <code>curl</code> al demo; <code>ls .github</code></td></tr></tbody></table></div>
+</details>
+<p class='pie'>Generado desde el .md por hackathon-scrape-participants (Parte D). El .md es la fuente: este archivo no se edita a mano.</p>
+</main>
+<script>
+const RANK = {"sin evidencia":0,"ausente":1,"flojo":2,"cumple":3,"fuerte":4,
+              "baja":0,"media":1,"alta":2};
+const key = (td) => {
+  const raw = td.textContent.trim();
+  const low = raw.toLowerCase();
+  for (const word in RANK) if (low.includes(word)) return [0, RANK[word]];
+  const num = parseFloat(raw.replace(",", "."));
+  if (!isNaN(num) && /^[\d.,\s/]+$/.test(raw)) return [0, num];
+  return [1, low];
+};
+document.querySelectorAll("table.sortable th").forEach((th, i) => {
+  th.addEventListener("click", () => {
+    const table = th.closest("table");
+    const body = table.tBodies[0];
+    const desc = !th.classList.contains("desc");
+    table.querySelectorAll("th").forEach(o => o.classList.remove("asc", "desc"));
+    th.classList.add(desc ? "desc" : "asc");
+    [...body.rows]
+      .sort((a, b) => {
+        const [ka, va] = key(a.cells[i]), [kb, vb] = key(b.cells[i]);
+        if (ka !== kb) return ka - kb;
+        const cmp = typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "es");
+        return desc ? -cmp : cmp;
+      })
+      .forEach(row => body.appendChild(row));
+  });
+});
+</script>
+</body>
+</html>
